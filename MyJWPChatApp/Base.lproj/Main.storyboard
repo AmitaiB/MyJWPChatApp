@@ -28,7 +28,7 @@
             <objects>
                 <tableViewController title="Profile" id="99W-5l-0Cs" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="VqA-5C-ntz">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="585"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" red="1" green="0.0" blue="0.2888867557" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <prototypes>
@@ -50,7 +50,7 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="hmv-EO-r4t" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="400.00000000000006" y="118.52678571428571"/>
+            <point key="canvasLocation" x="342" y="137"/>
         </scene>
         <!--Settings-->
         <scene sceneID="VXL-CW-sWp">
@@ -65,7 +65,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="gBB-3c-isF" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-486" y="800"/>
+            <point key="canvasLocation" x="-388" y="800"/>
         </scene>
         <!--View Controller-->
         <scene sceneID="vDU-6P-TNf">
@@ -100,10 +100,76 @@
             </objects>
             <point key="canvasLocation" x="-387" y="119"/>
         </scene>
+        <!--View Controller-->
+        <scene sceneID="TU1-cI-efa">
+            <objects>
+                <viewController id="cqq-vF-Vfv" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="dln-IH-RoB">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <containerView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="BTU-fi-dnO">
+                                <rect key="frame" x="0.0" y="277" width="414" height="585"/>
+                                <color key="backgroundColor" systemColor="systemPinkColor"/>
+                                <connections>
+                                    <segue destination="99W-5l-0Cs" kind="embed" id="Nzc-uh-pD6"/>
+                                </connections>
+                            </containerView>
+                            <containerView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="fWh-zn-BhT">
+                                <rect key="frame" x="0.0" y="44" width="414" height="233"/>
+                                <color key="backgroundColor" systemColor="systemOrangeColor"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="fWh-zn-BhT" secondAttribute="height" multiplier="16:9" id="79g-vc-7se"/>
+                                </constraints>
+                                <connections>
+                                    <segue destination="HSZ-6K-jLi" kind="embed" id="JTQ-zT-0UL"/>
+                                </connections>
+                            </containerView>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="6Vf-XB-LQI"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="BTU-fi-dnO" firstAttribute="leading" secondItem="6Vf-XB-LQI" secondAttribute="leading" id="3MM-Z1-aSs"/>
+                            <constraint firstItem="6Vf-XB-LQI" firstAttribute="bottom" secondItem="BTU-fi-dnO" secondAttribute="bottom" id="JfN-Yo-hDT"/>
+                            <constraint firstItem="BTU-fi-dnO" firstAttribute="top" secondItem="fWh-zn-BhT" secondAttribute="bottom" id="Lw4-dV-Bde"/>
+                            <constraint firstItem="fWh-zn-BhT" firstAttribute="top" secondItem="6Vf-XB-LQI" secondAttribute="top" id="RPy-pc-exY"/>
+                            <constraint firstItem="6Vf-XB-LQI" firstAttribute="trailing" secondItem="fWh-zn-BhT" secondAttribute="trailing" id="mi7-Vt-fgG"/>
+                            <constraint firstItem="6Vf-XB-LQI" firstAttribute="trailing" secondItem="BTU-fi-dnO" secondAttribute="trailing" id="o73-fr-Kkl"/>
+                            <constraint firstItem="fWh-zn-BhT" firstAttribute="leading" secondItem="6Vf-XB-LQI" secondAttribute="leading" id="vrp-CF-8nm"/>
+                        </constraints>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="896-ln-ODt" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-1459" y="119"/>
+        </scene>
+        <!--JW Player-->
+        <scene sceneID="HTB-TN-SKu">
+            <objects>
+                <viewController title="JW Player" id="HSZ-6K-jLi" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="jl5-am-Roh">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="233"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="uMu-i3-072" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-387" y="-424"/>
+        </scene>
     </scenes>
+    <inferredMetricsTieBreakers>
+        <segue reference="Nzc-uh-pD6"/>
+    </inferredMetricsTieBreakers>
     <resources>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+        <systemColor name="systemOrangeColor">
+            <color red="1" green="0.58431372549019611" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
+        <systemColor name="systemPinkColor">
+            <color red="1" green="0.17647058823529413" blue="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
     </resources>
 </document>
