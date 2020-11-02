@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 52;
+	objectVersion = 50;
 	objects = {
 
 /* Begin PBXBuildFile section */
@@ -14,6 +14,7 @@
 		115F7D32254FABD800D5EDCD /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 115F7D31254FABD800D5EDCD /* Assets.xcassets */; };
 		115F7D35254FABD800D5EDCD /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 115F7D33254FABD800D5EDCD /* LaunchScreen.storyboard */; };
 		115F7D3E254FAD0D00D5EDCD /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 115F7D3D254FAD0D00D5EDCD /* GoogleService-Info.plist */; };
+		18A3DEE4C1AF75E0BDABF025 /* Pods_MyJWPChatApp.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 609FC22350FC8D47D884D7A2 /* Pods_MyJWPChatApp.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -26,6 +27,9 @@
 		115F7D34254FABD800D5EDCD /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		115F7D36254FABD800D5EDCD /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		115F7D3D254FAD0D00D5EDCD /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		34D6247840C3EDCA853F2301 /* Pods-MyJWPChatApp.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MyJWPChatApp.debug.xcconfig"; path = "Target Support Files/Pods-MyJWPChatApp/Pods-MyJWPChatApp.debug.xcconfig"; sourceTree = "<group>"; };
+		609FC22350FC8D47D884D7A2 /* Pods_MyJWPChatApp.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_MyJWPChatApp.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		EAE1FE5D7ACC3D6165696CF0 /* Pods-MyJWPChatApp.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MyJWPChatApp.release.xcconfig"; path = "Target Support Files/Pods-MyJWPChatApp/Pods-MyJWPChatApp.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -33,6 +37,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				18A3DEE4C1AF75E0BDABF025 /* Pods_MyJWPChatApp.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -44,6 +49,8 @@
 			children = (
 				115F7D27254FABD600D5EDCD /* MyJWPChatApp */,
 				115F7D26254FABD600D5EDCD /* Products */,
+				BEAB4C4C3B99DA13B196106E /* Pods */,
+				E4D3B2A6EEF9C917686FA954 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -70,6 +77,24 @@
 			path = MyJWPChatApp;
 			sourceTree = "<group>";
 		};
+		BEAB4C4C3B99DA13B196106E /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				34D6247840C3EDCA853F2301 /* Pods-MyJWPChatApp.debug.xcconfig */,
+				EAE1FE5D7ACC3D6165696CF0 /* Pods-MyJWPChatApp.release.xcconfig */,
+			);
+			name = Pods;
+			path = Pods;
+			sourceTree = "<group>";
+		};
+		E4D3B2A6EEF9C917686FA954 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				609FC22350FC8D47D884D7A2 /* Pods_MyJWPChatApp.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -77,9 +102,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 115F7D39254FABD800D5EDCD /* Build configuration list for PBXNativeTarget "MyJWPChatApp" */;
 			buildPhases = (
+				088686E10BCE774A96D6AD36 /* [CP] Check Pods Manifest.lock */,
 				115F7D21254FABD600D5EDCD /* Sources */,
 				115F7D22254FABD600D5EDCD /* Frameworks */,
 				115F7D23254FABD600D5EDCD /* Resources */,
+				32388A26E03A09DC2F7CEC8D /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -113,9 +140,6 @@
 				Base,
 			);
 			mainGroup = 115F7D1C254FABD600D5EDCD;
-			packageReferences = (
-				115F7D40254FAE7900D5EDCD /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */,
-			);
 			productRefGroup = 115F7D26254FABD600D5EDCD /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -138,6 +162,48 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		088686E10BCE774A96D6AD36 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-MyJWPChatApp-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		32388A26E03A09DC2F7CEC8D /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-MyJWPChatApp/Pods-MyJWPChatApp-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-MyJWPChatApp/Pods-MyJWPChatApp-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-MyJWPChatApp/Pods-MyJWPChatApp-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		115F7D21254FABD600D5EDCD /* Sources */ = {
@@ -290,6 +356,7 @@
 		};
 		115F7D3A254FABD800D5EDCD /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 34D6247840C3EDCA853F2301 /* Pods-MyJWPChatApp.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
@@ -309,6 +376,7 @@
 		};
 		115F7D3B254FABD800D5EDCD /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = EAE1FE5D7ACC3D6165696CF0 /* Pods-MyJWPChatApp.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
@@ -348,17 +416,6 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
-
-/* Begin XCRemoteSwiftPackageReference section */
-		115F7D40254FAE7900D5EDCD /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */ = {
-			isa = XCRemoteSwiftPackageReference;
-			repositoryURL = "https://github.com/firebase/firebase-ios-sdk.git";
-			requirement = {
-				kind = upToNextMajorVersion;
-				minimumVersion = 7.0.0;
-			};
-		};
-/* End XCRemoteSwiftPackageReference section */
 	};
 	rootObject = 115F7D1D254FABD600D5EDCD /* Project object */;
 }
