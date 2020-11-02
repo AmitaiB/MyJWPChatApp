@@ -15,6 +15,7 @@
 		115F7D35254FABD800D5EDCD /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 115F7D33254FABD800D5EDCD /* LaunchScreen.storyboard */; };
 		115F7D3E254FAD0D00D5EDCD /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 115F7D3D254FAD0D00D5EDCD /* GoogleService-Info.plist */; };
 		115F7D53254FB7F500D5EDCD /* Login.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 115F7D52254FB7F500D5EDCD /* Login.storyboard */; };
+		118D349625507B9800075ED2 /* JWPlayerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 118D349525507B9800075ED2 /* JWPlayerViewController.swift */; };
 		18A3DEE4C1AF75E0BDABF025 /* Pods_MyJWPChatApp.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 609FC22350FC8D47D884D7A2 /* Pods_MyJWPChatApp.framework */; };
 /* End PBXBuildFile section */
 
@@ -30,6 +31,7 @@
 		115F7D3D254FAD0D00D5EDCD /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		115F7D50254FB2FF00D5EDCD /* MyJWPChatApp.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = MyJWPChatApp.entitlements; sourceTree = "<group>"; };
 		115F7D52254FB7F500D5EDCD /* Login.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Login.storyboard; sourceTree = "<group>"; };
+		118D349525507B9800075ED2 /* JWPlayerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JWPlayerViewController.swift; sourceTree = "<group>"; };
 		34D6247840C3EDCA853F2301 /* Pods-MyJWPChatApp.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MyJWPChatApp.debug.xcconfig"; path = "Target Support Files/Pods-MyJWPChatApp/Pods-MyJWPChatApp.debug.xcconfig"; sourceTree = "<group>"; };
 		609FC22350FC8D47D884D7A2 /* Pods_MyJWPChatApp.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_MyJWPChatApp.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		EAE1FE5D7ACC3D6165696CF0 /* Pods-MyJWPChatApp.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MyJWPChatApp.release.xcconfig"; path = "Target Support Files/Pods-MyJWPChatApp/Pods-MyJWPChatApp.release.xcconfig"; sourceTree = "<group>"; };
@@ -72,6 +74,7 @@
 				115F7D28254FABD600D5EDCD /* AppDelegate.swift */,
 				115F7D2A254FABD600D5EDCD /* SceneDelegate.swift */,
 				115F7D2C254FABD600D5EDCD /* ViewController.swift */,
+				118D349525507B9800075ED2 /* JWPlayerViewController.swift */,
 				115F7D52254FB7F500D5EDCD /* Login.storyboard */,
 				115F7D2E254FABD600D5EDCD /* Main.storyboard */,
 				115F7D31254FABD800D5EDCD /* Assets.xcassets */,
@@ -215,6 +218,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				118D349625507B9800075ED2 /* JWPlayerViewController.swift in Sources */,
 				115F7D2D254FABD600D5EDCD /* ViewController.swift in Sources */,
 				115F7D29254FABD600D5EDCD /* AppDelegate.swift in Sources */,
 				115F7D2B254FABD600D5EDCD /* SceneDelegate.swift in Sources */,
