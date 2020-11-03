@@ -7,6 +7,7 @@
 
 import UIKit
 import Firebase
+import AVFoundation
 
 @main
 class AppDelegate: UIResponder, UIApplicationDelegate {
@@ -17,6 +18,15 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         // Override point for customization after application launch.
         
         FirebaseApp.configure()
+        
+        // Set category to playback
+        do {
+            try AVAudioSession.sharedInstance().setCategory(.playback)
+            try AVAudioSession.sharedInstance().setActive(true, options: [])
+        }
+        catch {
+            print(error.localizedDescription)
+        }
         
         return true
     }

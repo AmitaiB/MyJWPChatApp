@@ -28,7 +28,7 @@
             <objects>
                 <tableViewController title="Profile" id="99W-5l-0Cs" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="VqA-5C-ntz">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="585"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" red="1" green="0.0" blue="0.2888867557" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <prototypes>
@@ -76,22 +76,22 @@
             <objects>
                 <viewController title="Settings" id="Qgh-Nh-1Wr" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="1vp-PL-45Z">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="531"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="WZ2-ph-7qu">
-                                <rect key="frame" x="87" y="118" width="240" height="128"/>
+                                <rect key="frame" x="87" y="30" width="240" height="128"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="128" id="Otq-nn-ldn"/>
                                     <constraint firstAttribute="width" constant="240" id="VNA-U0-Omn"/>
                                 </constraints>
                             </imageView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="0mL-FP-JIi">
-                                <rect key="frame" x="8" y="266" width="398" height="30"/>
+                                <rect key="frame" x="8" y="178" width="398" height="30"/>
                                 <state key="normal" title="Get Photo"/>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="4rk-6q-PbM">
-                                <rect key="frame" x="8" y="304" width="398" height="30"/>
+                                <rect key="frame" x="8" y="216" width="398" height="30"/>
                                 <state key="normal" title="Update"/>
                             </button>
                         </subviews>
@@ -150,7 +150,7 @@
         <!--View Controller-->
         <scene sceneID="TU1-cI-efa">
             <objects>
-                <viewController id="cqq-vF-Vfv" sceneMemberID="viewController">
+                <viewController modalPresentationStyle="fullScreen" id="cqq-vF-Vfv" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="dln-IH-RoB">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -209,7 +209,7 @@
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="vGG-Ay-iJO"/>
+        <segue reference="Nzc-uh-pD6"/>
     </inferredMetricsTieBreakers>
     <resources>
         <systemColor name="systemBackgroundColor">

@@ -11,7 +11,7 @@
         <!--Login-->
         <scene sceneID="4zI-ka-aG1">
             <objects>
-                <viewController title="Login" id="gdO-bi-gva" sceneMemberID="viewController">
+                <viewController title="Login" id="gdO-bi-gva" customClass="LoginViewController" customModule="MyJWPChatApp" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="j9k-Ox-2Lw">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -34,6 +34,9 @@
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="6Mg-XQ-hLv">
                                 <rect key="frame" x="20" y="244" width="374" height="30"/>
                                 <state key="normal" title="Login"/>
+                                <connections>
+                                    <action selector="loginButtonTapped:" destination="gdO-bi-gva" eventType="touchUpInside" id="CqL-XX-0KL"/>
+                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="aJY-mv-5VX">
                                 <rect key="frame" x="20" y="314" width="374" height="30"/>

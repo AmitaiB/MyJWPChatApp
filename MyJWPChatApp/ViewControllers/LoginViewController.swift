@@ -14,6 +14,8 @@ class LoginViewController: UIViewController {
         // Do any additional setup after loading the view.
     }
 
-
+    @IBAction func loginButtonTapped(_ sender: Any) {
+        perform(segue: StoryboardSegue.Login.showProfileSegueID)
+    }
 }
 
