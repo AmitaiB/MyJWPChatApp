@@ -17,6 +17,11 @@
 		115F7D53254FB7F500D5EDCD /* Login.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 115F7D52254FB7F500D5EDCD /* Login.storyboard */; };
 		118D349625507B9800075ED2 /* JWPlayerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 118D349525507B9800075ED2 /* JWPlayerViewController.swift */; };
 		118D34B125507D3200075ED2 /* UIKit+extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 118D34B025507D3200075ED2 /* UIKit+extensions.swift */; };
+		118D34C32550FA3300075ED2 /* localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 118D34C22550FA3300075ED2 /* localizable.strings */; };
+		118D34C62550FA8500075ED2 /* swiftgen.yml in Resources */ = {isa = PBXBuildFile; fileRef = 118D34C52550FA8500075ED2 /* swiftgen.yml */; };
+		118D34CD2550FF0800075ED2 /* L10n-Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 118D34CA2550FF0800075ED2 /* L10n-Constants.swift */; };
+		118D34CE2550FF0800075ED2 /* StoryboardScenes.swift in Sources */ = {isa = PBXBuildFile; fileRef = 118D34CB2550FF0800075ED2 /* StoryboardScenes.swift */; };
+		118D34CF2550FF0800075ED2 /* StoryboardSegues.swift in Sources */ = {isa = PBXBuildFile; fileRef = 118D34CC2550FF0800075ED2 /* StoryboardSegues.swift */; };
 		18A3DEE4C1AF75E0BDABF025 /* Pods_MyJWPChatApp.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 609FC22350FC8D47D884D7A2 /* Pods_MyJWPChatApp.framework */; };
 /* End PBXBuildFile section */
 
@@ -35,6 +40,11 @@
 		118D349525507B9800075ED2 /* JWPlayerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JWPlayerViewController.swift; sourceTree = "<group>"; };
 		118D34AB25507CF000075ED2 /* MyJWPChatApp-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "MyJWPChatApp-Bridging-Header.h"; sourceTree = "<group>"; };
 		118D34B025507D3200075ED2 /* UIKit+extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIKit+extensions.swift"; sourceTree = "<group>"; };
+		118D34C22550FA3300075ED2 /* localizable.strings */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.strings; path = localizable.strings; sourceTree = "<group>"; };
+		118D34C52550FA8500075ED2 /* swiftgen.yml */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.yaml; path = swiftgen.yml; sourceTree = "<group>"; };
+		118D34CA2550FF0800075ED2 /* L10n-Constants.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "L10n-Constants.swift"; sourceTree = "<group>"; };
+		118D34CB2550FF0800075ED2 /* StoryboardScenes.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StoryboardScenes.swift; sourceTree = "<group>"; };
+		118D34CC2550FF0800075ED2 /* StoryboardSegues.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StoryboardSegues.swift; sourceTree = "<group>"; };
 		34D6247840C3EDCA853F2301 /* Pods-MyJWPChatApp.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MyJWPChatApp.debug.xcconfig"; path = "Target Support Files/Pods-MyJWPChatApp/Pods-MyJWPChatApp.debug.xcconfig"; sourceTree = "<group>"; };
 		609FC22350FC8D47D884D7A2 /* Pods_MyJWPChatApp.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_MyJWPChatApp.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		EAE1FE5D7ACC3D6165696CF0 /* Pods-MyJWPChatApp.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MyJWPChatApp.release.xcconfig"; path = "Target Support Files/Pods-MyJWPChatApp/Pods-MyJWPChatApp.release.xcconfig"; sourceTree = "<group>"; };
@@ -55,6 +65,7 @@
 		115F7D1C254FABD600D5EDCD = {
 			isa = PBXGroup;
 			children = (
+				118D34C52550FA8500075ED2 /* swiftgen.yml */,
 				115F7D27254FABD600D5EDCD /* MyJWPChatApp */,
 				115F7D26254FABD600D5EDCD /* Products */,
 				BEAB4C4C3B99DA13B196106E /* Pods */,
@@ -104,6 +115,42 @@
 				118D34B025507D3200075ED2 /* UIKit+extensions.swift */,
 			);
 			path = Extensions;
+			sourceTree = "<group>";
+		};
+		118D34BF2550F9F800075ED2 /* SwiftGenFiles */ = {
+			isa = PBXGroup;
+			children = (
+				118D34C12550FA2200075ED2 /* Generated */,
+				118D34C02550FA1B00075ED2 /* Resources */,
+			);
+			path = SwiftGenFiles;
+			sourceTree = "<group>";
+		};
+		118D34C02550FA1B00075ED2 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				118D34C22550FA3300075ED2 /* localizable.strings */,
+			);
+			path = Resources;
+			sourceTree = "<group>";
+		};
+		118D34C12550FA2200075ED2 /* Generated */ = {
+			isa = PBXGroup;
+			children = (
+				118D34CA2550FF0800075ED2 /* L10n-Constants.swift */,
+				118D34CB2550FF0800075ED2 /* StoryboardScenes.swift */,
+				118D34CC2550FF0800075ED2 /* StoryboardSegues.swift */,
+			);
+			path = Generated;
+			sourceTree = "<group>";
+		};
+		118D34C82550FAA200075ED2 /* SupportingCode */ = {
+			isa = PBXGroup;
+			children = (
+				118D34BD2550F96600075ED2 /* Extensions */,
+				118D34BF2550F9F800075ED2 /* SwiftGenFiles */,
+			);
+			path = SupportingCode;
 			sourceTree = "<group>";
 		};
 		BEAB4C4C3B99DA13B196106E /* Pods */ = {
@@ -184,8 +231,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				115F7D35254FABD800D5EDCD /* LaunchScreen.storyboard in Resources */,
+				118D34C62550FA8500075ED2 /* swiftgen.yml in Resources */,
 				115F7D3E254FAD0D00D5EDCD /* GoogleService-Info.plist in Resources */,
 				115F7D32254FABD800D5EDCD /* Assets.xcassets in Resources */,
+				118D34C32550FA3300075ED2 /* localizable.strings in Resources */,
 				115F7D53254FB7F500D5EDCD /* Login.storyboard in Resources */,
 				115F7D30254FABD600D5EDCD /* Main.storyboard in Resources */,
 			);
@@ -243,7 +292,10 @@
 				118D34B125507D3200075ED2 /* UIKit+extensions.swift in Sources */,
 				118D349625507B9800075ED2 /* JWPlayerViewController.swift in Sources */,
 				115F7D2D254FABD600D5EDCD /* ViewController.swift in Sources */,
+				118D34CE2550FF0800075ED2 /* StoryboardScenes.swift in Sources */,
 				115F7D29254FABD600D5EDCD /* AppDelegate.swift in Sources */,
+				118D34CD2550FF0800075ED2 /* L10n-Constants.swift in Sources */,
+				118D34CF2550FF0800075ED2 /* StoryboardSegues.swift in Sources */,
 				115F7D2B254FABD600D5EDCD /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

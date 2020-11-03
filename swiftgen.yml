@@ -1,0 +1,22 @@
+input_dir: MyJWPChatApp
+output_dir: MyJWPChatApp
+strings:
+    inputs: SupportingCode/SwiftGenFiles/Resources/localizable.strings
+    outputs:
+        - templateName: structured-swift5
+          output: SupportingCode/SwiftGenFiles/Generated/L10n-Constants.swift
+ib:
+  inputs:
+    - 'Base.lproj/Main.storyboard'
+    - 'Login.storyboard'
+  outputs:
+    - templateName: scenes-swift5
+      output: SupportingCode/SwiftGenFiles/Generated/StoryboardScenes.swift
+    - templateName: segues-swift5
+      output: SupportingCode/SwiftGenFiles/Generated/StoryboardSegues.swift
+
+#colors:
+#  inputs: SupportingCode/SwiftGenFiles/Resources/colors.txt
+#  outputs:
+#    templateName: swift4
+#    output: SupportingCode/SwiftGenFiles/Generated/Colors.swift

@@ -1,0 +1,38 @@
+/* 
+  localizable.strings
+  JWPreviewer
+
+  Created by Amitai Blickstein on 2/18/19.
+  Copyright © 2019 Amitai Blickstein. All rights reserved.
+*/
+
+// *****************
+// KEY = TRANSLATION
+// *****************
+
+// URLs
+"Bip Bop URL" = "http://playertest.longtailvideo.com/adaptive/bipbop/gear4/prog_index.m3u8";
+"Big Buck Bunny URL" = "http://commondatastorage.googleapis.com/gtv-videos-bucket/sample/BigBuckBunny.mp4";
+
+
+// UI Controls
+"seg.content"     = "Content";
+"seg.advertising" = "Advertising";
+"seg.ui"          = "UI";
+
+
+// Enums
+"JWAdClient.Vast"      = "VAST";
+"JWAdClient.Googima"   = "Google IMA";
+"JWAdClient.Freewheel" = "FreeWheel";
+"JWAdShown.None" = "None";
+"JWAdShown.Pre"  = "Pre";
+
+// JWAdBreak
+"JWAdBreak.Cell" = "JWAdBreakCell";
+"Linear"         = "Linear";
+"NonLinear"      = "Non-Linear";
+
+// Rows
+"row.subConfigSelectionRow" = "subConfigSelectionRow";
+"row.adClientSelection"    = "adClientSelectionRow";
