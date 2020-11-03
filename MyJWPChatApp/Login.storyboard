@@ -60,10 +60,23 @@
                             <constraint firstItem="QHy-uB-Z2q" firstAttribute="top" secondItem="IYD-lv-5ah" secondAttribute="top" constant="30" id="zbq-xk-htT"/>
                         </constraints>
                     </view>
+                    <connections>
+                        <segue destination="HEH-PI-x5F" kind="show" identifier="ShowProfileSegueID" id="nfP-VG-Rxh"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="4g8-v1-XFF" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="-16184.057971014494" y="134.59821428571428"/>
+        </scene>
+        <!--Main-->
+        <scene sceneID="Zbl-8p-qjN">
+            <objects>
+                <viewControllerPlaceholder storyboardName="Main" id="HEH-PI-x5F" sceneMemberID="viewController">
+                    <navigationItem key="navigationItem" id="mbA-bj-Kvf"/>
+                </viewControllerPlaceholder>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="8if-DF-LkE" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-15520" y="135"/>
         </scene>
     </scenes>
     <resources>
