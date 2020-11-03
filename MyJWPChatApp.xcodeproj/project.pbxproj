@@ -27,6 +27,7 @@
 		118D34DB2551068700075ED2 /* SettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 118D34DA2551068700075ED2 /* SettingsViewController.swift */; };
 		11DE52D32551A151009D5C36 /* FirebaseManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11DE52D22551A151009D5C36 /* FirebaseManager.swift */; };
 		11DE52E92551B38D009D5C36 /* PostManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11DE52E82551B38D009D5C36 /* PostManager.swift */; };
+		11DE52EC2551EF78009D5C36 /* ChatTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11DE52EB2551EF78009D5C36 /* ChatTableViewCell.swift */; };
 		18A3DEE4C1AF75E0BDABF025 /* Pods_MyJWPChatApp.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 609FC22350FC8D47D884D7A2 /* Pods_MyJWPChatApp.framework */; };
 /* End PBXBuildFile section */
 
@@ -55,6 +56,7 @@
 		118D34DA2551068700075ED2 /* SettingsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsViewController.swift; sourceTree = "<group>"; };
 		11DE52D22551A151009D5C36 /* FirebaseManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirebaseManager.swift; sourceTree = "<group>"; };
 		11DE52E82551B38D009D5C36 /* PostManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostManager.swift; sourceTree = "<group>"; };
+		11DE52EB2551EF78009D5C36 /* ChatTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatTableViewCell.swift; sourceTree = "<group>"; };
 		34D6247840C3EDCA853F2301 /* Pods-MyJWPChatApp.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MyJWPChatApp.debug.xcconfig"; path = "Target Support Files/Pods-MyJWPChatApp/Pods-MyJWPChatApp.debug.xcconfig"; sourceTree = "<group>"; };
 		609FC22350FC8D47D884D7A2 /* Pods_MyJWPChatApp.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_MyJWPChatApp.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		EAE1FE5D7ACC3D6165696CF0 /* Pods-MyJWPChatApp.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MyJWPChatApp.release.xcconfig"; path = "Target Support Files/Pods-MyJWPChatApp/Pods-MyJWPChatApp.release.xcconfig"; sourceTree = "<group>"; };
@@ -117,6 +119,7 @@
 				115F7D2C254FABD600D5EDCD /* LoginViewController.swift */,
 				118D34D32551062300075ED2 /* ProfileTableViewController.swift */,
 				118D34D62551066C00075ED2 /* ChatViewController.swift */,
+				11DE52EB2551EF78009D5C36 /* ChatTableViewCell.swift */,
 				118D34DA2551068700075ED2 /* SettingsViewController.swift */,
 				118D349525507B9800075ED2 /* JWPlayerViewController.swift */,
 			);
@@ -323,6 +326,7 @@
 				115F7D29254FABD600D5EDCD /* AppDelegate.swift in Sources */,
 				118D34CD2550FF0800075ED2 /* L10n-Constants.swift in Sources */,
 				118D34CF2550FF0800075ED2 /* StoryboardSegues.swift in Sources */,
+				11DE52EC2551EF78009D5C36 /* ChatTableViewCell.swift in Sources */,
 				118D34D72551066C00075ED2 /* ChatViewController.swift in Sources */,
 				115F7D2B254FABD600D5EDCD /* SceneDelegate.swift in Sources */,
 			);
