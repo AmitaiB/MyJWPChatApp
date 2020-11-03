@@ -15,6 +15,23 @@ internal enum L10n {
   /// http://playertest.longtailvideo.com/adaptive/bipbop/gear4/prog_index.m3u8
   internal static let bipBopURL = L10n.tr("localizable", "Bip Bop URL")
 
+  internal enum Mock {
+    internal enum User {
+      internal enum Amitai {
+        /// amitai@jwplayer.com
+        internal static let email = L10n.tr("localizable", "Mock.User.Amitai.Email")
+        /// openopen
+        internal static let password = L10n.tr("localizable", "Mock.User.Amitai.Password")
+      }
+      internal enum Andrea {
+        /// atempestini@jwplayer.com
+        internal static let email = L10n.tr("localizable", "Mock.User.Andrea.Email")
+        /// atempestini
+        internal static let password = L10n.tr("localizable", "Mock.User.Andrea.Password")
+      }
+    }
+  }
+
   internal enum ReuseID {
     /// ChatCellReuseID
     internal static let chatCell = L10n.tr("localizable", "ReuseID.ChatCell")

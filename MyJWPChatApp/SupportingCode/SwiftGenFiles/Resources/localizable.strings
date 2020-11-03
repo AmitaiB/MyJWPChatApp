@@ -17,7 +17,14 @@
 
 // UI
 "ReuseID.ProfileCell" = "ProfileCellReuseID";
-"ReuseID.ChatCell" = "ChatCellReuseID";
+"ReuseID.ChatCell"    = "ChatCellReuseID";
+
+// credentials
+"Mock.User.Amitai.Email"    = "amitai@jwplayer.com";
+"Mock.User.Amitai.Password" = "openopen";
+"Mock.User.Andrea.Email"    = "atempestini@jwplayer.com";
+"Mock.User.Andrea.Password" = "atempestini";
+
 
 // Enums
 
