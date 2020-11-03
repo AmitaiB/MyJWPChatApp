@@ -7,6 +7,9 @@ target 'MyJWPChatApp' do
 
   # Pods for MyJWPChatApp
 	pod 'Firebase/Core'
+  pod 'Firebase/Database'
+  pod 'Firebase/Auth'
+  pod 'Firebase/Storage'
   
   pod 'JWPlayer-SDK', '3.18.1'
 end

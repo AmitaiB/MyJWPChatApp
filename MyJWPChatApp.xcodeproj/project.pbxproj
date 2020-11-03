@@ -25,6 +25,7 @@
 		118D34D42551062300075ED2 /* ProfileTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 118D34D32551062300075ED2 /* ProfileTableViewController.swift */; };
 		118D34D72551066C00075ED2 /* ChatViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 118D34D62551066C00075ED2 /* ChatViewController.swift */; };
 		118D34DB2551068700075ED2 /* SettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 118D34DA2551068700075ED2 /* SettingsViewController.swift */; };
+		11DE52D32551A151009D5C36 /* FirebaseManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11DE52D22551A151009D5C36 /* FirebaseManager.swift */; };
 		18A3DEE4C1AF75E0BDABF025 /* Pods_MyJWPChatApp.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 609FC22350FC8D47D884D7A2 /* Pods_MyJWPChatApp.framework */; };
 /* End PBXBuildFile section */
 
@@ -51,6 +52,7 @@
 		118D34D32551062300075ED2 /* ProfileTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileTableViewController.swift; sourceTree = "<group>"; };
 		118D34D62551066C00075ED2 /* ChatViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatViewController.swift; sourceTree = "<group>"; };
 		118D34DA2551068700075ED2 /* SettingsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsViewController.swift; sourceTree = "<group>"; };
+		11DE52D22551A151009D5C36 /* FirebaseManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirebaseManager.swift; sourceTree = "<group>"; };
 		34D6247840C3EDCA853F2301 /* Pods-MyJWPChatApp.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MyJWPChatApp.debug.xcconfig"; path = "Target Support Files/Pods-MyJWPChatApp/Pods-MyJWPChatApp.debug.xcconfig"; sourceTree = "<group>"; };
 		609FC22350FC8D47D884D7A2 /* Pods_MyJWPChatApp.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_MyJWPChatApp.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		EAE1FE5D7ACC3D6165696CF0 /* Pods-MyJWPChatApp.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MyJWPChatApp.release.xcconfig"; path = "Target Support Files/Pods-MyJWPChatApp/Pods-MyJWPChatApp.release.xcconfig"; sourceTree = "<group>"; };
@@ -94,6 +96,7 @@
 				115F7D28254FABD600D5EDCD /* AppDelegate.swift */,
 				115F7D2A254FABD600D5EDCD /* SceneDelegate.swift */,
 				118D34BB2550F95900075ED2 /* ViewControllers */,
+				11DE52D125519FEB009D5C36 /* Backend */,
 				118D34C82550FAA200075ED2 /* SupportingCode */,
 				115F7D52254FB7F500D5EDCD /* Login.storyboard */,
 				115F7D2E254FABD600D5EDCD /* Main.storyboard */,
@@ -160,6 +163,14 @@
 				118D34BF2550F9F800075ED2 /* SwiftGenFiles */,
 			);
 			path = SupportingCode;
+			sourceTree = "<group>";
+		};
+		11DE52D125519FEB009D5C36 /* Backend */ = {
+			isa = PBXGroup;
+			children = (
+				11DE52D22551A151009D5C36 /* FirebaseManager.swift */,
+			);
+			path = Backend;
 			sourceTree = "<group>";
 		};
 		BEAB4C4C3B99DA13B196106E /* Pods */ = {
@@ -298,6 +309,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				11DE52D32551A151009D5C36 /* FirebaseManager.swift in Sources */,
 				118D34D42551062300075ED2 /* ProfileTableViewController.swift in Sources */,
 				118D34B125507D3200075ED2 /* UIKit+extensions.swift in Sources */,
 				118D34DB2551068700075ED2 /* SettingsViewController.swift in Sources */,
