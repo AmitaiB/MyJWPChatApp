@@ -15,7 +15,9 @@
 "Big Buck Bunny URL" = "http://commondatastorage.googleapis.com/gtv-videos-bucket/sample/BigBuckBunny.mp4";
 
 
-// UI Controls
+// UI
+"ReuseID.ProfileCell" = "ProfileCellReuseID";
+"ReuseID.ChatCell" = "ChatCellReuseID";
 
 // Enums
 

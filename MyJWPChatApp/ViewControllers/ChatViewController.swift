@@ -25,5 +25,23 @@ class ChatViewController: UIViewController {
         // Pass the selected object to the new view controller.
     }
     */
+}
 
+extension ChatViewController: UITableViewDataSource {
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        3
+    }
+    
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let cell = tableView.dequeueReusableCell(withIdentifier: L10n.ReuseID.chatCell, for: indexPath)
+        cell.textLabel?.text = "test"
+
+        return cell
+    }
+    
+    
+}
+
+extension ChatViewController: UITableViewDelegate {
+    
 }

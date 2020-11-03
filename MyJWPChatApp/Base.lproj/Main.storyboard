@@ -11,17 +11,17 @@
         <!--Profile-->
         <scene sceneID="61k-zm-hik">
             <objects>
-                <tableViewController title="Profile" id="99W-5l-0Cs" sceneMemberID="viewController">
+                <tableViewController title="Profile" id="99W-5l-0Cs" customClass="ProfileTableViewController" customModule="MyJWPChatApp" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="VqA-5C-ntz">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="585"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" red="1" green="0.0" blue="0.2888867557" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" rowHeight="93" id="NMV-rQ-Jgn">
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" accessoryType="disclosureIndicator" indentationWidth="10" reuseIdentifier="ProfileCellReuseID" rowHeight="93" id="NMV-rQ-Jgn">
                                 <rect key="frame" x="0.0" y="28" width="414" height="93"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="NMV-rQ-Jgn" id="sXe-7Q-tp9">
-                                    <rect key="frame" x="0.0" y="0.0" width="414" height="93"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="383" height="93"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
                                         <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="r1R-DG-Cq4">
@@ -62,7 +62,7 @@
         <!--Settings-->
         <scene sceneID="VXL-CW-sWp">
             <objects>
-                <viewController title="Settings" id="Qgh-Nh-1Wr" sceneMemberID="viewController">
+                <viewController title="Settings" id="Qgh-Nh-1Wr" customClass="SettingsViewController" customModule="MyJWPChatApp" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="1vp-PL-45Z">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="585"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -105,16 +105,16 @@
         <!--Chat-->
         <scene sceneID="vDU-6P-TNf">
             <objects>
-                <viewController title="Chat" id="a1h-BH-zyK" sceneMemberID="viewController">
+                <viewController title="Chat" id="a1h-BH-zyK" customClass="ChatViewController" customModule="MyJWPChatApp" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="2zz-tn-dY5">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="585"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="P5A-FU-3K9">
-                                <rect key="frame" x="0.0" y="88" width="414" height="435"/>
+                                <rect key="frame" x="0.0" y="88" width="414" height="423"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" id="Y0g-hM-Qfi">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="ChatCellReuseID" id="Y0g-hM-Qfi">
                                         <rect key="frame" x="0.0" y="28" width="414" height="43.5"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="Y0g-hM-Qfi" id="UCO-h0-K94">
@@ -123,6 +123,10 @@
                                         </tableViewCellContentView>
                                     </tableViewCell>
                                 </prototypes>
+                                <connections>
+                                    <outlet property="dataSource" destination="a1h-BH-zyK" id="aw5-E6-4Jr"/>
+                                    <outlet property="delegate" destination="a1h-BH-zyK" id="3ME-QA-SK8"/>
+                                </connections>
                             </tableView>
                             <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="249" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="INM-dJ-sKH">
                                 <rect key="frame" x="20" y="531" width="322" height="34"/>
@@ -142,7 +146,7 @@
                         <constraints>
                             <constraint firstItem="P5A-FU-3K9" firstAttribute="top" secondItem="qTq-t5-4h5" secondAttribute="top" id="92C-TF-Q1Y"/>
                             <constraint firstItem="P5A-FU-3K9" firstAttribute="trailing" secondItem="qTq-t5-4h5" secondAttribute="trailing" id="D1i-aw-oRh"/>
-                            <constraint firstItem="INM-dJ-sKH" firstAttribute="top" secondItem="P5A-FU-3K9" secondAttribute="bottom" constant="8" symbolic="YES" id="L6h-x8-r1C"/>
+                            <constraint firstItem="INM-dJ-sKH" firstAttribute="top" secondItem="P5A-FU-3K9" secondAttribute="bottom" constant="20" id="L6h-x8-r1C"/>
                             <constraint firstItem="L0m-Z2-jG2" firstAttribute="leading" secondItem="INM-dJ-sKH" secondAttribute="trailing" constant="8" symbolic="YES" id="Vhh-f2-lmt"/>
                             <constraint firstItem="qTq-t5-4h5" firstAttribute="bottom" secondItem="L0m-Z2-jG2" secondAttribute="bottom" constant="22" id="brG-lj-ydS"/>
                             <constraint firstItem="INM-dJ-sKH" firstAttribute="bottom" secondItem="qTq-t5-4h5" secondAttribute="bottom" constant="-20" id="cay-UM-2qA"/>
@@ -226,6 +230,7 @@
                     <view key="view" contentMode="scaleToFill" id="jl5-am-Roh">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="233"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <viewLayoutGuide key="safeArea" id="07d-5K-ogt"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                     </view>
                     <connections>

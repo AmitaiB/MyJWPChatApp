@@ -14,6 +14,13 @@ internal enum L10n {
   internal static let bigBuckBunnyURL = L10n.tr("localizable", "Big Buck Bunny URL")
   /// http://playertest.longtailvideo.com/adaptive/bipbop/gear4/prog_index.m3u8
   internal static let bipBopURL = L10n.tr("localizable", "Bip Bop URL")
+
+  internal enum ReuseID {
+    /// ChatCellReuseID
+    internal static let chatCell = L10n.tr("localizable", "ReuseID.ChatCell")
+    /// ProfileCellReuseID
+    internal static let profileCell = L10n.tr("localizable", "ReuseID.ProfileCell")
+  }
 }
 // swiftlint:enable explicit_type_interface function_parameter_count identifier_name line_length
 // swiftlint:enable nesting type_body_length type_name vertical_whitespace_opening_braces
