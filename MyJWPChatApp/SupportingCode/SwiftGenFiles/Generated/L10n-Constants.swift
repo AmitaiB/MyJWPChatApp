@@ -14,47 +14,6 @@ internal enum L10n {
   internal static let bigBuckBunnyURL = L10n.tr("localizable", "Big Buck Bunny URL")
   /// http://playertest.longtailvideo.com/adaptive/bipbop/gear4/prog_index.m3u8
   internal static let bipBopURL = L10n.tr("localizable", "Bip Bop URL")
-  /// Linear
-  internal static let linear = L10n.tr("localizable", "Linear")
-  /// Non-Linear
-  internal static let nonLinear = L10n.tr("localizable", "NonLinear")
-
-  internal enum JWAdBreak {
-    /// JWAdBreakCell
-    internal static let cell = L10n.tr("localizable", "JWAdBreak.Cell")
-  }
-
-  internal enum JWAdClient {
-    /// FreeWheel
-    internal static let freewheel = L10n.tr("localizable", "JWAdClient.Freewheel")
-    /// Google IMA
-    internal static let googima = L10n.tr("localizable", "JWAdClient.Googima")
-    /// VAST
-    internal static let vast = L10n.tr("localizable", "JWAdClient.Vast")
-  }
-
-  internal enum JWAdShown {
-    /// None
-    internal static let `none` = L10n.tr("localizable", "JWAdShown.None")
-    /// Pre
-    internal static let pre = L10n.tr("localizable", "JWAdShown.Pre")
-  }
-
-  internal enum Row {
-    /// adClientSelectionRow
-    internal static let adClientSelection = L10n.tr("localizable", "row.adClientSelection")
-    /// subConfigSelectionRow
-    internal static let subConfigSelectionRow = L10n.tr("localizable", "row.subConfigSelectionRow")
-  }
-
-  internal enum Seg {
-    /// Advertising
-    internal static let advertising = L10n.tr("localizable", "seg.advertising")
-    /// Content
-    internal static let content = L10n.tr("localizable", "seg.content")
-    /// UI
-    internal static let ui = L10n.tr("localizable", "seg.ui")
-  }
 }
 // swiftlint:enable explicit_type_interface function_parameter_count identifier_name line_length
 // swiftlint:enable nesting type_body_length type_name vertical_whitespace_opening_braces

@@ -15,7 +15,7 @@ internal enum StoryboardScene {
   internal enum Login: StoryboardType {
     internal static let storyboardName = "Login"
 
-    internal static let initialScene = InitialSceneType<UIKit.UIViewController>(storyboard: Login.self)
+    internal static let initialScene = InitialSceneType<LoginViewController>(storyboard: Login.self)
   }
   internal enum Main: StoryboardType {
     internal static let storyboardName = "Main"

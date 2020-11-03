@@ -16,23 +16,9 @@
 
 
 // UI Controls
-"seg.content"     = "Content";
-"seg.advertising" = "Advertising";
-"seg.ui"          = "UI";
-
 
 // Enums
-"JWAdClient.Vast"      = "VAST";
-"JWAdClient.Googima"   = "Google IMA";
-"JWAdClient.Freewheel" = "FreeWheel";
-"JWAdShown.None" = "None";
-"JWAdShown.Pre"  = "Pre";
 
 // JWAdBreak
-"JWAdBreak.Cell" = "JWAdBreakCell";
-"Linear"         = "Linear";
-"NonLinear"      = "Non-Linear";
 
 // Rows
-"row.subConfigSelectionRow" = "subConfigSelectionRow";
-"row.adClientSelection"    = "adClientSelectionRow";
