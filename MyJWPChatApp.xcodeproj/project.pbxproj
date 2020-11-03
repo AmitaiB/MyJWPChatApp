@@ -76,9 +76,8 @@
 				115F7D50254FB2FF00D5EDCD /* MyJWPChatApp.entitlements */,
 				115F7D28254FABD600D5EDCD /* AppDelegate.swift */,
 				115F7D2A254FABD600D5EDCD /* SceneDelegate.swift */,
-				115F7D2C254FABD600D5EDCD /* ViewController.swift */,
-				118D349525507B9800075ED2 /* JWPlayerViewController.swift */,
-				118D34B025507D3200075ED2 /* UIKit+extensions.swift */,
+				118D34BB2550F95900075ED2 /* ViewControllers */,
+				118D34C82550FAA200075ED2 /* SupportingCode */,
 				115F7D52254FB7F500D5EDCD /* Login.storyboard */,
 				115F7D2E254FABD600D5EDCD /* Main.storyboard */,
 				115F7D31254FABD800D5EDCD /* Assets.xcassets */,
@@ -88,6 +87,23 @@
 				118D34AB25507CF000075ED2 /* MyJWPChatApp-Bridging-Header.h */,
 			);
 			path = MyJWPChatApp;
+			sourceTree = "<group>";
+		};
+		118D34BB2550F95900075ED2 /* ViewControllers */ = {
+			isa = PBXGroup;
+			children = (
+				115F7D2C254FABD600D5EDCD /* ViewController.swift */,
+				118D349525507B9800075ED2 /* JWPlayerViewController.swift */,
+			);
+			path = ViewControllers;
+			sourceTree = "<group>";
+		};
+		118D34BD2550F96600075ED2 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				118D34B025507D3200075ED2 /* UIKit+extensions.swift */,
+			);
+			path = Extensions;
 			sourceTree = "<group>";
 		};
 		BEAB4C4C3B99DA13B196106E /* Pods */ = {
