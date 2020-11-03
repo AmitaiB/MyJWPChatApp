@@ -38,6 +38,19 @@ internal enum L10n {
     /// ProfileCellReuseID
     internal static let profileCell = L10n.tr("localizable", "ReuseID.ProfileCell")
   }
+
+  internal enum DbPath {
+    /// Posts
+    internal static let posts = L10n.tr("localizable", "dbPath.Posts")
+    /// text
+    internal static let text = L10n.tr("localizable", "dbPath.text")
+    /// toID
+    internal static let toId = L10n.tr("localizable", "dbPath.toId")
+    /// uid
+    internal static let uid = L10n.tr("localizable", "dbPath.uid")
+    /// username
+    internal static let username = L10n.tr("localizable", "dbPath.username")
+  }
 }
 // swiftlint:enable explicit_type_interface function_parameter_count identifier_name line_length
 // swiftlint:enable nesting type_body_length type_name vertical_whitespace_opening_braces

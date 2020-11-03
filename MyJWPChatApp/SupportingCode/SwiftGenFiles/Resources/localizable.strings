@@ -25,6 +25,12 @@
 "Mock.User.Andrea.Email"    = "atempestini@jwplayer.com";
 "Mock.User.Andrea.Password" = "atempestini";
 
+// Backend
+"dbPath.Posts"    = "Posts";
+"dbPath.uid"      = "uid";
+"dbPath.toId"     = "toID";
+"dbPath.username" = "username";
+"dbPath.text"     = "text";
 
 // Enums
 

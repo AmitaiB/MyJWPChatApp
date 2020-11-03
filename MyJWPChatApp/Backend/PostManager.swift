@@ -6,7 +6,46 @@
 //
 
 import Foundation
+import Firebase
+import FirebaseDatabase
+import FirebaseAuth
 
 class PostManager {
+    static let dbRef = Database.database().reference()
+    static var posts = [Post]()
     
+    static func fillPosts(uid: String?, toId: String, completion: @escaping(_ result: Result<String, Error>) -> Void) {
+        posts = []
+        let allPosts = dbRef.child(L10n.DbPath.posts)
+        print(allPosts)
+        
+        // a Uint? But this subscribes to
+        let post = allPosts
+            .queryOrdered(byChild: L10n.DbPath.uid)
+            .queryEqual(toValue: FirebaseManager.currentUser?.uid)
+            .observe(.childAdded)
+                { snapshot in print(snapshot) }
+        
+        allPosts
+            .queryOrdered(byChild: L10n.DbPath.uid)
+            .queryEqual(toValue: FirebaseManager.currentUser?.uid)
+            .observe(.childAdded) { (snapshot) in
+                print(snapshot)
+                
+                if let result = snapshot.value as? JSON {
+                    print(result.description)
+                    // https://app.pluralsight.com/course-player?clipId=4003f644-098c-42c8-a729-a464ea567c1c
+                        // ~4:00+ min
+                }
+            }
+        
+    }
+}
+
+typealias JSON = [String:Any]
+
+struct Post {
+    var username: String
+    var text: String
+    var toId: String
 }
