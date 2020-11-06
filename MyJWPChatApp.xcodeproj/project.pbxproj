@@ -10,6 +10,7 @@
 		112ED6362554FA2200AD4D69 /* PostQueryResult.swift in Sources */ = {isa = PBXBuildFile; fileRef = 112ED6352554FA2200AD4D69 /* PostQueryResult.swift */; };
 		112ED63F2555044F00AD4D69 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 112ED63E2555044F00AD4D69 /* User.swift */; };
 		112ED642255508A100AD4D69 /* ProfileManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 112ED641255508A100AD4D69 /* ProfileManager.swift */; };
+		112ED65925559AF700AD4D69 /* Post.swift in Sources */ = {isa = PBXBuildFile; fileRef = 112ED65825559AF700AD4D69 /* Post.swift */; };
 		115F7D29254FABD600D5EDCD /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 115F7D28254FABD600D5EDCD /* AppDelegate.swift */; };
 		115F7D2B254FABD600D5EDCD /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 115F7D2A254FABD600D5EDCD /* SceneDelegate.swift */; };
 		115F7D2D254FABD600D5EDCD /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 115F7D2C254FABD600D5EDCD /* LoginViewController.swift */; };
@@ -38,6 +39,7 @@
 		112ED6352554FA2200AD4D69 /* PostQueryResult.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostQueryResult.swift; sourceTree = "<group>"; };
 		112ED63E2555044F00AD4D69 /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		112ED641255508A100AD4D69 /* ProfileManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileManager.swift; sourceTree = "<group>"; };
+		112ED65825559AF700AD4D69 /* Post.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Post.swift; sourceTree = "<group>"; };
 		115F7D25254FABD600D5EDCD /* MyJWPChatApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MyJWPChatApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		115F7D28254FABD600D5EDCD /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		115F7D2A254FABD600D5EDCD /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -191,6 +193,7 @@
 			children = (
 				11DE52D22551A151009D5C36 /* FirebaseManager.swift */,
 				11DE52E82551B38D009D5C36 /* PostManager.swift */,
+				112ED65825559AF700AD4D69 /* Post.swift */,
 				112ED6352554FA2200AD4D69 /* PostQueryResult.swift */,
 			);
 			path = Backend;
@@ -347,6 +350,7 @@
 				112ED642255508A100AD4D69 /* ProfileManager.swift in Sources */,
 				112ED6362554FA2200AD4D69 /* PostQueryResult.swift in Sources */,
 				11DE52EC2551EF78009D5C36 /* ChatTableViewCell.swift in Sources */,
+				112ED65925559AF700AD4D69 /* Post.swift in Sources */,
 				118D34D72551066C00075ED2 /* ChatViewController.swift in Sources */,
 				115F7D2B254FABD600D5EDCD /* SceneDelegate.swift in Sources */,
 			);

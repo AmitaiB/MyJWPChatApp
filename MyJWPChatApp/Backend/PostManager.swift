@@ -52,9 +52,3 @@ class PostManager {
         posts = []
     }
 }
-
-struct Post {
-    var username: String
-    var text: String
-    var toId: String
-}
