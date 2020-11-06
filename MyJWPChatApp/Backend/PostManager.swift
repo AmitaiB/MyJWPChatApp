@@ -32,17 +32,22 @@ class PostManager {
             .observe(.childAdded) { (snapshot) in
                 print(snapshot)
                 
-                if let result = snapshot.value as? JSON {
+                if let result = snapshot.value as? [String: AnyObject] {
                     print(result.description)
-                    // https://app.pluralsight.com/course-player?clipId=4003f644-098c-42c8-a729-a464ea567c1c
-                        // ~4:00+ min
+                    if
+                        let toIdCloud = result[L10n.DbPath.toId] as? String,
+                        toIdCloud == toId,
+                        let username = result[L10n.DbPath.username] as? String,
+                        let text = result[L10n.DbPath.text] as? String
+                    {
+                        let post = Post(username: username, text: text, toId: toId)
+                        PostManager.posts.append(post)
+                    }
                 }
             }
-        
+        completion(.success(""))
     }
 }
-
-typealias JSON = [String:Any]
 
 struct Post {
     var username: String

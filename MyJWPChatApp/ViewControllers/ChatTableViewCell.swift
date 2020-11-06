@@ -8,6 +8,7 @@
 import UIKit
 
 class ChatTableViewCell: UITableViewCell {
+    @IBOutlet var messageTextView: UITextView!
 
     override func awakeFromNib() {
         super.awakeFromNib()

@@ -7,7 +7,7 @@
 
 import UIKit
 
-class ChatViewController: UIViewController {
+class ChatViewController: UIViewController, UITextViewDelegate {
     @IBOutlet weak var tableView: UITableView!
     
     override func viewDidLoad() {
@@ -17,15 +17,10 @@ class ChatViewController: UIViewController {
     }
     
 
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
+    override func viewDidDisappear(_ animated: Bool) {
+        super.viewDidDisappear(animated)
+        PostManager.posts = []
     }
-    */
 }
 
 extension ChatViewController: UITableViewDataSource {
@@ -34,13 +29,15 @@ extension ChatViewController: UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: L10n.ReuseID.chatCell, for: indexPath)
-        cell.textLabel?.text = "test"
+        let cell = tableView.dequeueReusableCell(withIdentifier: L10n.ReuseID.chatCell, for: indexPath) as! ChatTableViewCell
+        
+        let messageText = cell.messageTextView!
+        messageText.delegate = self
+        let post = PostManager.posts[indexPath.row]
+        messageText.text = post.text
 
         return cell
     }
-    
-    
 }
 
 extension ChatViewController: UITableViewDelegate {

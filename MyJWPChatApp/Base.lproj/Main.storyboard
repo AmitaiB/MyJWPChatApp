@@ -114,7 +114,7 @@
                                 <rect key="frame" x="0.0" y="88" width="414" height="423"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="ChatCellReuseID" id="Y0g-hM-Qfi">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="ChatCellReuseID" id="Y0g-hM-Qfi" customClass="ChatTableViewCell" customModule="MyJWPChatApp" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="28" width="414" height="43.5"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="Y0g-hM-Qfi" id="UCO-h0-K94">
@@ -137,6 +137,9 @@
                                                 <constraint firstItem="69f-ZV-mPS" firstAttribute="top" secondItem="UCO-h0-K94" secondAttribute="top" id="yAm-0m-OIx"/>
                                             </constraints>
                                         </tableViewCellContentView>
+                                        <connections>
+                                            <outlet property="messageTextView" destination="69f-ZV-mPS" id="nti-R7-i2g"/>
+                                        </connections>
                                     </tableViewCell>
                                 </prototypes>
                                 <connections>
