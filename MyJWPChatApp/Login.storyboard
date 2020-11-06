@@ -64,7 +64,7 @@
                         </constraints>
                     </view>
                     <connections>
-                        <segue destination="HEH-PI-x5F" kind="show" identifier="ShowProfileSegueID" id="nfP-VG-Rxh"/>
+                        <segue destination="HEH-PI-x5F" kind="show" identifier="showProfileSegueID" id="nfP-VG-Rxh"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="4g8-v1-XFF" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>

@@ -38,7 +38,7 @@
                                     </subviews>
                                 </tableViewCellContentView>
                                 <connections>
-                                    <segue destination="a1h-BH-zyK" kind="show" id="XyS-y6-fRt"/>
+                                    <segue destination="a1h-BH-zyK" kind="show" identifier="showChatViewSegueID" id="XyS-y6-fRt"/>
                                 </connections>
                             </tableViewCell>
                         </prototypes>
@@ -50,7 +50,7 @@
                     <navigationItem key="navigationItem" id="qyS-Br-oXn">
                         <barButtonItem key="rightBarButtonItem" title="Settings" id="ZxD-I9-aG1">
                             <connections>
-                                <segue destination="Qgh-Nh-1Wr" kind="show" identifier="ShowSettingsSegueID" id="2yV-hC-W3G"/>
+                                <segue destination="Qgh-Nh-1Wr" kind="show" identifier="showSettingsSegueID" id="2yV-hC-W3G"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>
