@@ -19,7 +19,7 @@ class ChatViewController: UIViewController, UITextViewDelegate {
 
     override func viewDidDisappear(_ animated: Bool) {
         super.viewDidDisappear(animated)
-        PostManager.posts = []
+        PostManager.clearCurrentPosts()
     }
 }
 
@@ -32,7 +32,7 @@ extension ChatViewController: UITableViewDataSource {
         let cell = tableView.dequeueReusableCell(withIdentifier: L10n.ReuseID.chatCell, for: indexPath) as! ChatTableViewCell
         
         let messageText = cell.messageTextView!
-        messageText.delegate = self
+//        messageText.delegate = self
         let post = PostManager.posts[indexPath.row]
         messageText.text = post.text
 

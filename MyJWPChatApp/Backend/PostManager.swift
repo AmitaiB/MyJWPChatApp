@@ -15,7 +15,7 @@ class PostManager {
     static var posts = [Post]()
     
     static func fillPosts(uid: String?, toId: String, completion: @escaping(_ result: Result<String, Error>) -> Void) {
-        posts = []
+        clearCurrentPosts()
         let allPosts = dbRef.child(L10n.DbPath.posts)
         print(allPosts)
         
@@ -46,6 +46,10 @@ class PostManager {
                 }
             }
         completion(.success(""))
+    }
+    
+    static func clearCurrentPosts() {
+        posts = []
     }
 }
 

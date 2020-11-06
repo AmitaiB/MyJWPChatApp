@@ -128,6 +128,9 @@
                                                     <color key="textColor" systemColor="labelColor"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                     <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                                                    <connections>
+                                                        <outlet property="delegate" destination="a1h-BH-zyK" id="T7f-Kb-oy3"/>
+                                                    </connections>
                                                 </textView>
                                             </subviews>
                                             <constraints>
