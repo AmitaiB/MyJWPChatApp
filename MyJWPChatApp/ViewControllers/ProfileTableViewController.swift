@@ -35,7 +35,8 @@ class ProfileTableViewController: UITableViewController {
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: L10n.ReuseID.profileCell, for: indexPath)
 
-        cell.textLabel?.text = "testing"
+        let user = ProfileManager.users[indexPath.row]
+        cell.textLabel?.text = user.username
 
         return cell
     }

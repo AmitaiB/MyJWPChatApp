@@ -40,8 +40,12 @@ internal enum L10n {
   }
 
   internal enum DbPath {
+    /// email
+    internal static let email = L10n.tr("localizable", "dbPath.email")
     /// Posts
     internal static let posts = L10n.tr("localizable", "dbPath.Posts")
+    /// profileImageUrl
+    internal static let profileImageUrl = L10n.tr("localizable", "dbPath.profileImageUrl")
     /// text
     internal static let text = L10n.tr("localizable", "dbPath.text")
     /// toID
@@ -50,6 +54,8 @@ internal enum L10n {
     internal static let uid = L10n.tr("localizable", "dbPath.uid")
     /// username
     internal static let username = L10n.tr("localizable", "dbPath.username")
+    /// users
+    internal static let users = L10n.tr("localizable", "dbPath.users")
   }
 }
 // swiftlint:enable explicit_type_interface function_parameter_count identifier_name line_length

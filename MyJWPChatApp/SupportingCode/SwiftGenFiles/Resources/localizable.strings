@@ -31,6 +31,9 @@
 "dbPath.toId"     = "toID";
 "dbPath.username" = "username";
 "dbPath.text"     = "text";
+"dbPath.users"    = "users";
+"dbPath.email"    = "email";
+"dbPath.profileImageUrl" = "profileImageUrl";
 
 // Enums
 

@@ -23,7 +23,7 @@ class FirebaseManager {
                 completion(.failure(error))
             } else
             if let result = result {
-                currentUser   = result.user
+//                currentUser   = result.user
                 currentUserId = result.user.uid
                 completion(.success(result))
             }
