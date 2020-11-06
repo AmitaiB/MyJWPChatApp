@@ -9,6 +9,7 @@ import Foundation
 import Firebase
 import FirebaseDatabase
 import FirebaseAuth
+import CodableFirebase
 
 class PostManager {
     static let dbRef = Database.database().reference()
@@ -19,12 +20,12 @@ class PostManager {
         let allPosts = dbRef.child(L10n.DbPath.posts)
         print(allPosts)
         
-        // a Uint? But this subscribes to
-        let post = allPosts
-            .queryOrdered(byChild: L10n.DbPath.uid)
-            .queryEqual(toValue: FirebaseManager.currentUser?.uid)
-            .observe(.childAdded)
-                { snapshot in print(snapshot) }
+        // Unclear why this is needed:
+//        let _ = allPosts
+//            .queryOrdered(byChild: L10n.DbPath.uid)
+//            .queryEqual(toValue: FirebaseManager.currentUser?.uid)
+//            .observe(.childAdded)
+//                { snapshot in print(snapshot) }
         
         allPosts
             .queryOrdered(byChild: L10n.DbPath.uid)
@@ -32,20 +33,28 @@ class PostManager {
             .observe(.childAdded) { (snapshot) in
                 print(snapshot)
                 
-                if let result = snapshot.value as? [String: AnyObject] {
-                    print(result.description)
-                    if
-                        let toIdCloud = result[L10n.DbPath.toId] as? String,
-                        toIdCloud == toId,
-                        let username = result[L10n.DbPath.username] as? String,
-                        let text = result[L10n.DbPath.text] as? String
-                    {
-                        let post = Post(username: username, text: text, toId: toId)
-                        PostManager.posts.append(post)
-                    }
+                guard let value = snapshot.value else { return }
+                do {
+                    let post = try FirebaseDecoder().decode(Post.self, from: value)
+                    PostManager.posts.append(post)
                 }
+                catch { print(error.localizedDescription) }
+                
+              // Original code, before CodableFirebase
+//                if let result = snapshot.value as? [String: AnyObject] {
+//                    print(result.description)
+//                    if
+//                        let toIdCloud = result[L10n.DbPath.toId] as? String,
+//                        toIdCloud == toId,
+//                        let username = result[L10n.DbPath.username] as? String,
+//                        let text = result[L10n.DbPath.text] as? String
+//                    {
+//                        let post = Post(username: username, text: text, toId: toId)
+//                        PostManager.posts.append(post)
+//                    }
+//                }
             }
-        completion(.success(""))
+        completion(.success(" CALLED COMPLETION SUCCESS"))
     }
     
     static func clearCurrentPosts() {
