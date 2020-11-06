@@ -9,6 +9,8 @@ import UIKit
 
 class ChatViewController: UIViewController, UITextViewDelegate {
     @IBOutlet weak var tableView: UITableView!
+    var selectedUser: User?
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -16,6 +18,24 @@ class ChatViewController: UIViewController, UITextViewDelegate {
         // Do any additional setup after loading the view.
     }
     
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+        
+        PostManager.fillPosts(uid: FirebaseManager.currentUser?.uid,
+                              toId: (selectedUser?.uid)!) {
+            switch ($0) {
+                case .success(let value):
+                    print("")
+                    
+                    DispatchQueue.main.async {
+                        self.tableView.reloadData()
+                    }
+                    
+                case .failure(let error):
+                    print(error)
+            }
+        }
+    }
 
     override func viewDidDisappear(_ animated: Bool) {
         super.viewDidDisappear(animated)
@@ -25,7 +45,7 @@ class ChatViewController: UIViewController, UITextViewDelegate {
 
 extension ChatViewController: UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        3
+        PostManager.posts.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
