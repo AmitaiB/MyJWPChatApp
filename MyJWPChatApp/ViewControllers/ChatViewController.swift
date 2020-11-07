@@ -21,11 +21,13 @@ class ChatViewController: UIViewController, UITextViewDelegate {
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
         
+        guard let selectedUserId = selectedUser?.uid else { return }
+        
         PostManager.fillPosts(uid: FirebaseManager.currentUser?.uid,
-                              toId: (selectedUser?.uid)!) {
+                              toId: selectedUserId) {
             switch ($0) {
                 case .success(let value):
-                    print("")
+                    print("\(value)")
                     
                     DispatchQueue.main.async {
                         self.tableView.reloadData()

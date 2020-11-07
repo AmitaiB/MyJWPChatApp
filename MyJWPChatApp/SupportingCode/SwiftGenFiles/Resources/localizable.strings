@@ -26,9 +26,9 @@
 "Mock.User.Andrea.Password" = "atempestini";
 
 // Backend
-"dbPath.Posts"    = "Posts";
+"dbPath.Posts"    = "posts";
 "dbPath.uid"      = "uid";
-"dbPath.toId"     = "toID";
+"dbPath.toId"     = "toId";
 "dbPath.username" = "username";
 "dbPath.text"     = "text";
 "dbPath.users"    = "users";
