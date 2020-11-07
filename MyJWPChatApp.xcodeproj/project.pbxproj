@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		111E8F56255633A700C6ED25 /* Codable+extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 111E8F55255633A700C6ED25 /* Codable+extensions.swift */; };
 		112ED6362554FA2200AD4D69 /* PostQueryResult.swift in Sources */ = {isa = PBXBuildFile; fileRef = 112ED6352554FA2200AD4D69 /* PostQueryResult.swift */; };
 		112ED63F2555044F00AD4D69 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 112ED63E2555044F00AD4D69 /* User.swift */; };
 		112ED642255508A100AD4D69 /* ProfileManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 112ED641255508A100AD4D69 /* ProfileManager.swift */; };
@@ -36,6 +37,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		111E8F55255633A700C6ED25 /* Codable+extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Codable+extensions.swift"; sourceTree = "<group>"; };
 		112ED6352554FA2200AD4D69 /* PostQueryResult.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostQueryResult.swift; sourceTree = "<group>"; };
 		112ED63E2555044F00AD4D69 /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		112ED641255508A100AD4D69 /* ProfileManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileManager.swift; sourceTree = "<group>"; };
@@ -148,6 +150,7 @@
 			isa = PBXGroup;
 			children = (
 				118D34B025507D3200075ED2 /* UIKit+extensions.swift */,
+				111E8F55255633A700C6ED25 /* Codable+extensions.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -346,6 +349,7 @@
 				11DE52E92551B38D009D5C36 /* PostManager.swift in Sources */,
 				115F7D29254FABD600D5EDCD /* AppDelegate.swift in Sources */,
 				118D34CD2550FF0800075ED2 /* L10n-Constants.swift in Sources */,
+				111E8F56255633A700C6ED25 /* Codable+extensions.swift in Sources */,
 				118D34CF2550FF0800075ED2 /* StoryboardSegues.swift in Sources */,
 				112ED642255508A100AD4D69 /* ProfileManager.swift in Sources */,
 				112ED6362554FA2200AD4D69 /* PostQueryResult.swift in Sources */,

@@ -9,7 +9,6 @@ import Foundation
 import Firebase
 import FirebaseDatabase
 import FirebaseAuth
-import CodableFirebase
 
 class PostManager {
     static let dbRef = Database.database().reference()
@@ -35,12 +34,12 @@ class PostManager {
                 
                 guard let value = snapshot.value else { return }
                 do {
-                    let post = try FirebaseDecoder().decode(Post.self, from: value)
+                    let post = try Post(decodeFrom: value)
                     PostManager.posts.append(post)
                 }
                 catch { print(error.localizedDescription) }
                 
-              // Original code, before CodableFirebase
+              // Original code, before Codable
 //                if let result = snapshot.value as? [String: AnyObject] {
 //                    print(result.description)
 //                    if

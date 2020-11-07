@@ -32,19 +32,27 @@ class ProfileManager {
         clearUsers()
         dbRef.child(L10n.DbPath.users).observe(.childAdded) {
             print($0.description)
-            if let result = $0.value as? [String: AnyObject] {
-                let uid = result[L10n.DbPath.uid] as! String
-                let username = result[L10n.DbPath.username] as! String
-                let email = result[L10n.DbPath.email] as! String
-                let profileImageUrl = result[L10n.DbPath.profileImageUrl] as! String
-                
-                let user = User(username: username,
-                                email: email,
-                                uid: uid,
-                                profileImageUrl: profileImageUrl)
-                
+            
+            guard let value = $0.value else { return }
+            do {
+                let user = try User(decodeFrom: value)
                 users.append(user)
             }
+            catch { print(error.localizedDescription) }
+            
+//            if let result = $0.value as? [String: AnyObject] {
+//                let uid = result[L10n.DbPath.uid] as! String
+//                let username = result[L10n.DbPath.username] as! String
+//                let email = result[L10n.DbPath.email] as! String
+//                let profileImageUrl = result[L10n.DbPath.profileImageUrl] as! String
+//
+//                let user = User(username: username,
+//                                email: email,
+//                                uid: uid,
+//                                profileImageUrl: profileImageUrl)
+//
+//                users.append(user)
+//            }
             completion()
         }
     }
