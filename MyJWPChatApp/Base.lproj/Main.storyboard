@@ -129,7 +129,7 @@
                                                     <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                     <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                                                     <connections>
-                                                        <outlet property="delegate" destination="a1h-BH-zyK" id="T7f-Kb-oy3"/>
+                                                        <outlet property="delegate" destination="a1h-BH-zyK" id="RGE-jt-wvX"/>
                                                     </connections>
                                                 </textView>
                                             </subviews>
@@ -146,8 +146,8 @@
                                     </tableViewCell>
                                 </prototypes>
                                 <connections>
-                                    <outlet property="dataSource" destination="a1h-BH-zyK" id="aw5-E6-4Jr"/>
-                                    <outlet property="delegate" destination="a1h-BH-zyK" id="3ME-QA-SK8"/>
+                                    <outlet property="dataSource" destination="a1h-BH-zyK" id="HbI-Vd-S3w"/>
+                                    <outlet property="delegate" destination="a1h-BH-zyK" id="fxb-RY-g1j"/>
                                 </connections>
                             </tableView>
                             <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="249" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="INM-dJ-sKH">
