@@ -23,9 +23,9 @@ class LoginViewController: UIViewController {
             switch $0 {
                 case .success(let dataResult):
                     self.perform(segue: StoryboardSegue.Login.showProfileSegueID)
-                    print("SUCCESS")
+                    print("SUCCESS: \(dataResult.description)")
                 case .failure(let error):
-                    print("FAILURE")
+                    print("FAILURE with Error: \(error.localizedDescription)")
             }
         }
     }

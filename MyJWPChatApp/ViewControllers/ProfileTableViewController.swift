@@ -58,17 +58,9 @@ class ProfileTableViewController: UITableViewController {
                 chatVC?.selectedUser = selectedUser
             case .showSettingsSegueID:
                 let settingsVC = segue.destination as? SettingsViewController
-                settingsVC
-            default:
+                settingsVC?.selectedUser = selectedUser
+            case .none:
                 break
-        }
-        
-        
-        switch segue.identifier {
-            case StoryboardSegue.Main.showChatViewSegueID.rawValue:
-                (segue.destination as? ChatViewController)?.selectedUser = selectedUser
-            default:
-                break
-        }
+        }        
     }
 }

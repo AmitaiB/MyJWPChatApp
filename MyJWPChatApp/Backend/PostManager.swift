@@ -14,46 +14,30 @@ class PostManager {
     static let dbRef = Database.database().reference()
     static var posts = [Post]()
     
-    static func fillPosts(uid: String?, toId: String, completion: @escaping(_ result: Result<String, Error>) -> Void) {
+    static func fillPosts(uid: String?,
+                          toId: String,
+                          completion: @escaping(_ result: Result<Post, Error>) -> Void) {
         clearCurrentPosts()
-        let allPosts = dbRef.child(L10n.DbPath.posts)
-        print(allPosts)
         
-        // Unclear why this is needed:
-//        let _ = allPosts
-//            .queryOrdered(byChild: L10n.DbPath.uid)
-//            .queryEqual(toValue: FirebaseManager.currentUser?.uid)
-//            .observe(.childAdded)
-//                { snapshot in print(snapshot) }
-        
-        allPosts
-            .queryOrdered(byChild: L10n.DbPath.uid)
-            .queryEqual(toValue: FirebaseManager.currentUser?.uid)
-            .observe(.childAdded) { (snapshot) in
-                print(snapshot)
+        dbRef
+            .child(L10n.DbPath.posts) // only posts
+            .queryOrdered(byChild: L10n.DbPath.uid) // uniq by uid
+            .queryEqual(toValue: FirebaseManager.currentUser?.uid) // this user's posts
+            .observe(.childAdded) {
+                guard let postValue = $0.value else { return }
                 
-                guard let value = snapshot.value else { return }
+                print("postValue in 'fillPosts': \($0.debugDescription)")
+                
                 do {
-                    let post = try Post(decodeFrom: value)
-                    PostManager.posts.append(post)
+                    let newPost = try Post(decodeFrom: postValue)
+                    PostManager.posts.append(newPost)
+                    completion(.success(newPost))
                 }
-                catch { print(error.localizedDescription) }
-                
-              // Original code, before Codable
-//                if let result = snapshot.value as? [String: AnyObject] {
-//                    print(result.description)
-//                    if
-//                        let toIdCloud = result[L10n.DbPath.toId] as? String,
-//                        toIdCloud == toId,
-//                        let username = result[L10n.DbPath.username] as? String,
-//                        let text = result[L10n.DbPath.text] as? String
-//                    {
-//                        let post = Post(username: username, text: text, toId: toId)
-//                        PostManager.posts.append(post)
-//                    }
-//                }
+                catch {
+                    print(error.localizedDescription)
+                    completion(.failure(error))
+                }
             }
-        completion(.success(" CALLED COMPLETION SUCCESS"))
     }
     
     static func clearCurrentPosts() {

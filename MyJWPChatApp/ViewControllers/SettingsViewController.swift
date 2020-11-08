@@ -8,7 +8,8 @@
 import UIKit
 
 class SettingsViewController: UIViewController {
-
+    var selectedUser: User?
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 

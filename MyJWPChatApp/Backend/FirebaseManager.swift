@@ -12,7 +12,7 @@ import FirebaseAuth
 
 class FirebaseManager {
     static let dbRef = Database.database().reference()
-    static var currentUserId = ""
+    /// The "logged in" user.
     static var currentUser: User?
     
     static func login(email: String, password: String, completion: @escaping (_ success: Result<AuthDataResult, Error>) -> Void) {
@@ -22,11 +22,20 @@ class FirebaseManager {
                 print(error.localizedDescription)
                 completion(.failure(error))
             } else
-            if let result = result {
-//                currentUser   = result.user
-                currentUserId = result.user.uid
-                completion(.success(result))
+            if let authResult = result {
+                currentUser   = authResult.user.asLocalUserObj
+                completion(.success(authResult))
             }
         }
+    }
+}
+
+extension FirebaseAuth.User {
+    /// - returns: a `MyJWPChatApp.User` object.
+    var asLocalUserObj: User? {
+        User(username: displayName ?? "username not set",
+             email: email ?? "email not set",
+             uid: uid,
+             profileImageUrl: photoURL?.absoluteString ?? "profile image url not set")
     }
 }
