@@ -8,15 +8,22 @@
 import UIKit
 
 class LoginViewController: UIViewController {
-
+    @IBOutlet weak var emailField: UITextField!
+    @IBOutlet weak var passwordField: UITextField!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
     }
 
     @IBAction func loginButtonTapped(_ sender: Any) {
-        let email    = L10n.Mock.User.Amitai.email
-        let password = L10n.Mock.User.Amitai.password
+        guard
+            let email = emailField.text?.trimmingCharacters(in: .whitespaces),
+            let password = passwordField.text?.trimmingCharacters(in: .whitespaces)
+        else { return }
+        
+//        let email    = L10n.Mock.User.Amitai.email
+//        let password = L10n.Mock.User.Amitai.password
         
         FirebaseManager.login(email: email,
                               password: password) {

@@ -19,21 +19,21 @@
                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="user name (new accounts only)" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="QHy-uB-Z2q">
                                 <rect key="frame" x="20" y="74" width="374" height="34"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits"/>
+                                <textInputTraits key="textInputTraits" textContentType="username"/>
                             </textField>
-                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="apR-NI-vp6">
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="openopen" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="apR-NI-vp6">
                                 <rect key="frame" x="20" y="190" width="374" height="34"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits"/>
+                                <textInputTraits key="textInputTraits" returnKeyType="continue" secureTextEntry="YES" textContentType="password"/>
                             </textField>
-                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="g4L-sU-ZHF">
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="amitai@jwplayer.com" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="g4L-sU-ZHF">
                                 <rect key="frame" x="20" y="148" width="374" height="34"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits"/>
+                                <textInputTraits key="textInputTraits" returnKeyType="next" textContentType="email"/>
                             </textField>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="6Mg-XQ-hLv">
                                 <rect key="frame" x="20" y="244" width="374" height="30"/>
-                                <state key="normal" title="Login"/>
+                                <state key="normal" title="Login with email"/>
                                 <connections>
                                     <action selector="loginButtonTapped:" destination="gdO-bi-gva" eventType="touchUpInside" id="CqL-XX-0KL"/>
                                 </connections>
@@ -64,6 +64,8 @@
                         </constraints>
                     </view>
                     <connections>
+                        <outlet property="emailField" destination="g4L-sU-ZHF" id="E5G-j6-1et"/>
+                        <outlet property="passwordField" destination="apR-NI-vp6" id="CGB-sk-sHP"/>
                         <segue destination="HEH-PI-x5F" kind="show" identifier="showProfileSegueID" id="nfP-VG-Rxh"/>
                     </connections>
                 </viewController>
