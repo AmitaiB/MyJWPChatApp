@@ -41,6 +41,9 @@
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="aJY-mv-5VX">
                                 <rect key="frame" x="20" y="314" width="374" height="30"/>
                                 <state key="normal" title="Create Account"/>
+                                <connections>
+                                    <action selector="createAccountButtonTapped:" destination="gdO-bi-gva" eventType="touchUpInside" id="4NL-2N-yz2"/>
+                                </connections>
                             </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="IYD-lv-5ah"/>
@@ -66,6 +69,7 @@
                     <connections>
                         <outlet property="emailField" destination="g4L-sU-ZHF" id="E5G-j6-1et"/>
                         <outlet property="passwordField" destination="apR-NI-vp6" id="CGB-sk-sHP"/>
+                        <outlet property="usernameField" destination="QHy-uB-Z2q" id="oYb-qs-9vP"/>
                         <segue destination="HEH-PI-x5F" kind="show" identifier="showProfileSegueID" id="nfP-VG-Rxh"/>
                     </connections>
                 </viewController>

@@ -8,6 +8,7 @@
 import UIKit
 
 class LoginViewController: UIViewController {
+    @IBOutlet weak var usernameField: UITextField!
     @IBOutlet weak var emailField: UITextField!
     @IBOutlet weak var passwordField: UITextField!
     
@@ -22,9 +23,6 @@ class LoginViewController: UIViewController {
             let password = passwordField.text?.trimmingCharacters(in: .whitespaces)
         else { return }
         
-//        let email    = L10n.Mock.User.Amitai.email
-//        let password = L10n.Mock.User.Amitai.password
-        
         FirebaseManager.login(email: email,
                               password: password) {
             switch $0 {
@@ -35,6 +33,11 @@ class LoginViewController: UIViewController {
                     print("FAILURE with Error: \(error.localizedDescription)")
             }
         }
+    }
+
+
+    @IBAction func createAccountButtonTapped(_ sender: UIButton) {
+        
     }
 }
 
