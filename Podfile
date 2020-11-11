@@ -11,7 +11,7 @@ target 'MyJWPChatApp' do
   pod 'Firebase/Auth'
   pod 'Firebase/Storage'
   
-#  pod 'CodableFirebase'
+  pod 'CodableFirebase'
   
   pod 'JWPlayer-SDK', '3.18.1'
 end
