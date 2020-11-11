@@ -37,7 +37,17 @@ class LoginViewController: UIViewController {
 
 
     @IBAction func createAccountButtonTapped(_ sender: UIButton) {
+        guard
+            let email = emailField.text,
+            let password = passwordField.text,
+            let username = usernameField.text
+        else { print("Create New Account not attempted"); return }
         
+        FirebaseManager.createAccount(email: email,
+                                      password: password,
+                                      username: username) { _ in
+            self.perform(segue: StoryboardSegue.Login.showProfileSegueID)
+        }
     }
 }
 
