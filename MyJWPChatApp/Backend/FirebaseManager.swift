@@ -17,7 +17,9 @@ typealias AuthDataResultType = Result<AuthDataResult, Error>
 class FirebaseManager {
     static let dbRef = Database.database().reference()
     /// The "logged in" user.
-    static var currentUser: User?
+    static var currentUser: User? { didSet {
+        syncUsernameAndImageUrlFromDB(for: currentUser) }
+    }
     
     // On success, (1) signs in, (2) FirebaseManager saves the now logged in user locally
     static func login(email: String,
@@ -62,7 +64,7 @@ class FirebaseManager {
                 case .success(let response):
                     print("Login successful after account creation")
                 case .failure(let error):
-                    print("Login unsuccessful after account creation")
+                    print("Login unsuccessful after account creation: \(error.localizedDescription)")
             }
             completion($0)
         }
@@ -71,10 +73,11 @@ class FirebaseManager {
     
     static func addUser(username: String, email: String) {
         guard let uid = Auth.auth().currentUser?.uid else { return }
-        let user = User(username: username,
+        let gravatarPlaceholder: String? = nil
+        let user = User(uid: uid,
                         email: email,
-                        uid: uid,
-                        profileImageUrl: "")
+                        username: username,
+                        profileImageUrl: gravatarPlaceholder)
         
         if let userData = try? FirebaseEncoder().encode(user) {
             dbRef
@@ -92,14 +95,35 @@ class FirebaseManager {
     }
     
     enum LoginError: Error { case unknownError }
+    
+    private static func syncUsernameAndImageUrlFromDB(for user: User?) {
+        guard let user = user else { return }
+        
+        //sync with user object
+        dbRef.child(L10n.DbPath.users)
+            .queryOrdered(byChild: L10n.DbPath.uid)
+            .queryEqual(toValue: user.uid)
+            .observeSingleEvent(of: .value) {
+                guard let value = $0.value else { return }
+                do {
+                    let user = try FirebaseDecoder().decode(User.self, from: value)
+
+                    // overwrite local nil values
+                    currentUser?.username = currentUser?.username ?? user.username
+                    currentUser?.profileImageUrl = currentUser?.profileImageUrl ?? user.profileImageUrl
+                    
+                }
+                catch { print(error.localizedDescription) }
+            }
+    }
 }
 
 extension FirebaseAuth.User {
     /// - returns: a `MyJWPChatApp.User` object.
     var asLocalUserObj: User? {
-        User(username: displayName ?? "username not set",
-             email: email ?? "email not set",
-             uid: uid,
-             profileImageUrl: photoURL?.absoluteString ?? "profile image url not set")
+        User(uid: uid,
+             email: email,
+             username: uid,
+             profileImageUrl: photoURL?.absoluteString)
     }
 }

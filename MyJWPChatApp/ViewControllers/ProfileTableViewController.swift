@@ -40,14 +40,10 @@ class ProfileTableViewController: UITableViewController {
         let user = ProfileManager.users[indexPath.row]
         cell.profileNameLabel.text = user.username
 
-        if !user.profileImageUrl.isEmpty {
-            // user.getProfileImage
-        } else {
-            cell.profileImageView.image = #imageLiteral(resourceName: "icons8-female_user")
-        }
-        
-        
 
+        // Mock data
+        cell.profileImageView.image = #imageLiteral(resourceName: "icons8-female_user")
+        
         return cell
     }
     

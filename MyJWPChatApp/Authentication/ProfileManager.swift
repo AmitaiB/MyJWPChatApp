@@ -9,10 +9,11 @@ import Foundation
 import Firebase
 import FirebaseDatabase
 import FirebaseAuth
+import CodableFirebase
 
 class ProfileManager {
     static let dbRef = Database.database().reference()
-    static let uid = Auth.auth().currentUser?.uid
+    static let uid = FirebaseManager.currentUser?.uid
     
     static var users = [User]()
     
@@ -35,24 +36,11 @@ class ProfileManager {
             
             guard let value = $0.value else { return }
             do {
-                let user = try User(decodeFrom: value)
+                let user = try FirebaseDecoder().decode(User.self, from: value)
                 users.append(user)
             }
             catch { print(error.localizedDescription) }
             
-//            if let result = $0.value as? [String: AnyObject] {
-//                let uid = result[L10n.DbPath.uid] as! String
-//                let username = result[L10n.DbPath.username] as! String
-//                let email = result[L10n.DbPath.email] as! String
-//                let profileImageUrl = result[L10n.DbPath.profileImageUrl] as! String
-//
-//                let user = User(username: username,
-//                                email: email,
-//                                uid: uid,
-//                                profileImageUrl: profileImageUrl)
-//
-//                users.append(user)
-//            }
             completion()
         }
     }
