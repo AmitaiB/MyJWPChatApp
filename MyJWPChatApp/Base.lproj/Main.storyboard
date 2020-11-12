@@ -161,6 +161,9 @@
                                     <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="44" id="vF9-dX-1c2"/>
                                 </constraints>
                                 <state key="normal" title="send"/>
+                                <connections>
+                                    <action selector="sendButtonTapped:" destination="a1h-BH-zyK" eventType="touchUpInside" id="ZST-sv-4EP"/>
+                                </connections>
                             </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="qTq-t5-4h5"/>
@@ -181,6 +184,7 @@
                     <navigationItem key="navigationItem" id="0Mr-Vy-xbw"/>
                     <connections>
                         <outlet property="tableView" destination="P5A-FU-3K9" id="LFi-Ra-NzW"/>
+                        <outlet property="userInputField" destination="INM-dJ-sKH" id="mXF-RY-0vv"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="63h-hh-cao" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>

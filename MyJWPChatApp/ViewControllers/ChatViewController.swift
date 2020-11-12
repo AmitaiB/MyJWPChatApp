@@ -9,6 +9,7 @@ import UIKit
 
 class ChatViewController: UIViewController, UITextViewDelegate {
     @IBOutlet weak var tableView: UITableView!
+    @IBOutlet weak var userInputField: UITextField!
     var selectedUser: User?
     
     
@@ -42,6 +43,25 @@ class ChatViewController: UIViewController, UITextViewDelegate {
         super.viewDidDisappear(animated)
         PostManager.clearCurrentPosts()
     }
+    
+    @IBAction func sendButtonTapped(_ sender: UIButton) {
+        guard
+            let username = selectedUser?.username,
+            let message = userInputField.text,
+            !message.isEmpty,
+            let toId = selectedUser?.uid,
+            let currentUid = FirebaseManager.currentUser?.uid
+        else {return}
+              
+        PostManager.addPost(username: username,
+                            text: message,
+                            toId: toId,
+                            fromId: currentUid)
+        
+        userInputField.clearField()
+    }
+    
+    
 }
 
 extension ChatViewController: UITableViewDataSource {
@@ -63,4 +83,10 @@ extension ChatViewController: UITableViewDataSource {
 
 extension ChatViewController: UITableViewDelegate {
     
+}
+
+extension UITextField {
+    func clearField() {
+        text = nil
+    }
 }
