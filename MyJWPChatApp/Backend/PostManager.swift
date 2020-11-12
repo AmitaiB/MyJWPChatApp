@@ -10,13 +10,16 @@ import Firebase
 import FirebaseDatabase
 import FirebaseAuth
 
+import CodableFirebase
+
+typealias PostResult = Result<Post, Error>
+
 class PostManager {
     static let dbRef = Database.database().reference()
     static var posts = [Post]()
     
-    static func fillPosts(uid: String?,
-                          toId: String,
-                          completion: @escaping(_ result: Result<Post, Error>) -> Void) {
+    // Fills the view controller with the existing conversation/threads
+    static func fillPosts(uid: String?, toId: String, completion: @escaping(_ result: PostResult) -> Void) {
         clearCurrentPosts()
         
         dbRef
@@ -40,6 +43,19 @@ class PostManager {
             }
     }
     
+    // Well-named.
+    static func addPost(username: String, text: String, toId: String, fromId: String) {
+        guard !text.isEmpty else { return }
+            
+        let postData = try? FirebaseEncoder()
+            .encode(Post(username: username,
+                         text: text,
+                         toId: toId,
+                         uid: Auth.auth().currentUser?.uid))
+        
+        dbRef.child(L10n.DbPath.posts).childByAutoId().setValue(postData)
+    }
+        
     static func clearCurrentPosts() {
         posts = []
     }
