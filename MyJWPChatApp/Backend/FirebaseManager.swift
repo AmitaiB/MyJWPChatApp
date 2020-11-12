@@ -72,7 +72,7 @@ class FirebaseManager {
     }
     
     static func addUser(username: String, email: String) {
-        guard let uid = Auth.auth().currentUser?.uid else { return }
+        guard let uid = currentUser?.uid else { return }
         let gravatarPlaceholder: String? = nil
         let user = User(uid: uid,
                         email: email,

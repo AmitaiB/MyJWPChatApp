@@ -9,10 +9,11 @@ import UIKit
 
 class ChatTableViewCell: UITableViewCell {
     @IBOutlet var messageTextView: UITextView!
-
+    
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
+        messageTextView.layer.cornerRadius = 10
     }
 
     override func setSelected(_ selected: Bool, animated: Bool) {

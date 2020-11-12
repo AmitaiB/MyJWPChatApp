@@ -7,16 +7,18 @@
 
 import UIKit
 
-class ChatViewController: UIViewController, UITextViewDelegate {
+class ChatViewController: UIViewController {
     @IBOutlet weak var tableView: UITableView!
     @IBOutlet weak var userInputField: UITextField!
     var selectedUser: User?
     
+    var cellHeight: CGFloat = 44
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        // Do any additional setup after loading the view.
+        
+        tableView.estimatedRowHeight = 88
+        tableView.rowHeight = UITableView.automaticDimension
     }
     
     override func viewDidAppear(_ animated: Bool) {
@@ -71,11 +73,10 @@ extension ChatViewController: UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: L10n.ReuseID.chatCell, for: indexPath) as! ChatTableViewCell
+        cellHeight = cell.messageTextView.contentSize.height
         
-        let messageText = cell.messageTextView!
-//        messageText.delegate = self
         let post = PostManager.posts[indexPath.row]
-        messageText.text = post.text
+        cell.messageTextView.text = post.text
 
         return cell
     }
@@ -83,6 +84,16 @@ extension ChatViewController: UITableViewDataSource {
 
 extension ChatViewController: UITableViewDelegate {
     
+}
+
+extension ChatViewController: UITextViewDelegate {
+    func textViewDidChange(_ textView: UITextView) {
+        let currentOffset = tableView.contentOffset
+        UIView.setAnimationsEnabled(false)
+        tableView.beginUpdates()
+        tableView.endUpdates()
+        tableView.setContentOffset(currentOffset, animated: false)
+    }
 }
 
 extension UITextField {
