@@ -8,7 +8,6 @@
 
 /* Begin PBXBuildFile section */
 		111E8F56255633A700C6ED25 /* Codable+extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 111E8F55255633A700C6ED25 /* Codable+extensions.swift */; };
-		112ED6362554FA2200AD4D69 /* PostQueryResult.swift in Sources */ = {isa = PBXBuildFile; fileRef = 112ED6352554FA2200AD4D69 /* PostQueryResult.swift */; };
 		112ED63F2555044F00AD4D69 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 112ED63E2555044F00AD4D69 /* User.swift */; };
 		112ED642255508A100AD4D69 /* ProfileManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 112ED641255508A100AD4D69 /* ProfileManager.swift */; };
 		112ED65925559AF700AD4D69 /* Post.swift in Sources */ = {isa = PBXBuildFile; fileRef = 112ED65825559AF700AD4D69 /* Post.swift */; };
@@ -34,6 +33,7 @@
 		11DE52D32551A151009D5C36 /* FirebaseManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11DE52D22551A151009D5C36 /* FirebaseManager.swift */; };
 		11DE52E92551B38D009D5C36 /* PostManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11DE52E82551B38D009D5C36 /* PostManager.swift */; };
 		11DE52EC2551EF78009D5C36 /* ChatTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11DE52EB2551EF78009D5C36 /* ChatTableViewCell.swift */; };
+		11EDDB0D255DAF17005B1F82 /* NSObject+extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11EDDB0C255DAF16005B1F82 /* NSObject+extensions.swift */; };
 		18A3DEE4C1AF75E0BDABF025 /* Pods_MyJWPChatApp.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 609FC22350FC8D47D884D7A2 /* Pods_MyJWPChatApp.framework */; };
 /* End PBXBuildFile section */
 
@@ -69,6 +69,7 @@
 		11DE52D22551A151009D5C36 /* FirebaseManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirebaseManager.swift; sourceTree = "<group>"; };
 		11DE52E82551B38D009D5C36 /* PostManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostManager.swift; sourceTree = "<group>"; };
 		11DE52EB2551EF78009D5C36 /* ChatTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatTableViewCell.swift; sourceTree = "<group>"; };
+		11EDDB0C255DAF16005B1F82 /* NSObject+extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "NSObject+extensions.swift"; sourceTree = "<group>"; };
 		34D6247840C3EDCA853F2301 /* Pods-MyJWPChatApp.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MyJWPChatApp.debug.xcconfig"; path = "Target Support Files/Pods-MyJWPChatApp/Pods-MyJWPChatApp.debug.xcconfig"; sourceTree = "<group>"; };
 		609FC22350FC8D47D884D7A2 /* Pods_MyJWPChatApp.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_MyJWPChatApp.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		EAE1FE5D7ACC3D6165696CF0 /* Pods-MyJWPChatApp.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MyJWPChatApp.release.xcconfig"; path = "Target Support Files/Pods-MyJWPChatApp/Pods-MyJWPChatApp.release.xcconfig"; sourceTree = "<group>"; };
@@ -153,6 +154,7 @@
 			children = (
 				118D34B025507D3200075ED2 /* UIKit+extensions.swift */,
 				111E8F55255633A700C6ED25 /* Codable+extensions.swift */,
+				11EDDB0C255DAF16005B1F82 /* NSObject+extensions.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -356,6 +358,7 @@
 				112ED63F2555044F00AD4D69 /* User.swift in Sources */,
 				118D349625507B9800075ED2 /* JWPlayerViewController.swift in Sources */,
 				115F7D2D254FABD600D5EDCD /* LoginViewController.swift in Sources */,
+				11EDDB0D255DAF17005B1F82 /* NSObject+extensions.swift in Sources */,
 				118D34CE2550FF0800075ED2 /* StoryboardScenes.swift in Sources */,
 				11DE52E92551B38D009D5C36 /* PostManager.swift in Sources */,
 				115F7D29254FABD600D5EDCD /* AppDelegate.swift in Sources */,
@@ -364,7 +367,6 @@
 				118D34CF2550FF0800075ED2 /* StoryboardSegues.swift in Sources */,
 				11AE1D4F255CF5F800044100 /* ProfileTableViewCell.swift in Sources */,
 				112ED642255508A100AD4D69 /* ProfileManager.swift in Sources */,
-				112ED6362554FA2200AD4D69 /* PostQueryResult.swift in Sources */,
 				11DE52EC2551EF78009D5C36 /* ChatTableViewCell.swift in Sources */,
 				112ED65925559AF700AD4D69 /* Post.swift in Sources */,
 				118D34D72551066C00075ED2 /* ChatViewController.swift in Sources */,
