@@ -119,6 +119,7 @@
 				115F7D28254FABD600D5EDCD /* AppDelegate.swift */,
 				115F7D2A254FABD600D5EDCD /* SceneDelegate.swift */,
 				118D34BB2550F95900075ED2 /* ViewControllers */,
+				11AE1D4D255CF5D700044100 /* Views */,
 				11DE52D125519FEB009D5C36 /* Backend */,
 				112ED6392555041100AD4D69 /* Authentication */,
 				118D34C82550FAA200075ED2 /* SupportingCode */,
@@ -139,7 +140,6 @@
 				115F7D2C254FABD600D5EDCD /* LoginViewController.swift */,
 				118D34D32551062300075ED2 /* ProfileTableViewController.swift */,
 				118D34D62551066C00075ED2 /* ChatViewController.swift */,
-				11DE52EB2551EF78009D5C36 /* ChatTableViewCell.swift */,
 				118D34DA2551068700075ED2 /* SettingsViewController.swift */,
 				118D349525507B9800075ED2 /* JWPlayerViewController.swift */,
 			);
@@ -189,6 +189,14 @@
 				118D34BF2550F9F800075ED2 /* SwiftGenFiles */,
 			);
 			path = SupportingCode;
+			sourceTree = "<group>";
+		};
+		11AE1D4D255CF5D700044100 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				11DE52EB2551EF78009D5C36 /* ChatTableViewCell.swift */,
+			);
+			path = Views;
 			sourceTree = "<group>";
 		};
 		11DE52D125519FEB009D5C36 /* Backend */ = {
