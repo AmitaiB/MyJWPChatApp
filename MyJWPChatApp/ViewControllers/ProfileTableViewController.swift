@@ -35,10 +35,18 @@ class ProfileTableViewController: UITableViewController {
 
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: L10n.ReuseID.profileCell, for: indexPath)
+        let cell = tableView.dequeueReusableCell(withIdentifier: L10n.ReuseID.profileCell, for: indexPath) as! ProfileTableViewCell
 
         let user = ProfileManager.users[indexPath.row]
-        cell.textLabel?.text = user.username
+        cell.profileNameLabel.text = user.username
+
+        if !user.profileImageUrl.isEmpty {
+            // user.getProfileImage
+        } else {
+            cell.profileImageView.image = #imageLiteral(resourceName: "icons8-female_user")
+        }
+        
+        
 
         return cell
     }
