@@ -8,8 +8,8 @@
 import Foundation
 
 struct Post: Codable {
-    var username: String
-    var text: String
     var toId: String
-    var uid: String?
+    var text: String
+    var ownerUid: String
+    var ownerUsername: String?
 }

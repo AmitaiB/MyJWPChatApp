@@ -42,8 +42,10 @@ internal enum L10n {
   internal enum DbPath {
     /// email
     internal static let email = L10n.tr("localizable", "dbPath.email")
+    /// ownerUid
+    internal static let ownerUid = L10n.tr("localizable", "dbPath.ownerUid")
     /// posts
-    internal static let posts = L10n.tr("localizable", "dbPath.Posts")
+    internal static let posts = L10n.tr("localizable", "dbPath.posts")
     /// profileImageUrl
     internal static let profileImageUrl = L10n.tr("localizable", "dbPath.profileImageUrl")
     /// text

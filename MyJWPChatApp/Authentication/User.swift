@@ -8,8 +8,11 @@
 import Foundation
 
 struct User: Codable {
-    var username: String
-    var email: String
+    // Properties shared with FirebaseAuth.User
     var uid: String
-    var profileImageUrl: String
+    var email: String?
+
+    // Properties unique to our user objects
+    var username: String?
+    var profileImageUrl: String?
 }

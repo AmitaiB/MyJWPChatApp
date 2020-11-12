@@ -26,7 +26,7 @@
 "Mock.User.Andrea.Password" = "atempestini";
 
 // Backend
-"dbPath.Posts"    = "posts";
+"dbPath.posts"    = "posts";
 "dbPath.uid"      = "uid";
 "dbPath.toId"     = "toId";
 "dbPath.username" = "username";
@@ -34,6 +34,8 @@
 "dbPath.users"    = "users";
 "dbPath.email"    = "email";
 "dbPath.profileImageUrl" = "profileImageUrl";
+
+"dbPath.ownerUid" = "ownerUid";
 
 // Enums
 
