@@ -84,6 +84,9 @@ PODS:
   - nanopb/decode (1.30906.0)
   - nanopb/encode (1.30906.0)
   - PromisesObjC (1.2.11)
+  - SDWebImage (5.9.4):
+    - SDWebImage/Core (= 5.9.4)
+  - SDWebImage/Core (5.9.4)
 
 DEPENDENCIES:
   - CodableFirebase
@@ -92,6 +95,7 @@ DEPENDENCIES:
   - Firebase/Database
   - Firebase/Storage
   - JWPlayer-SDK (= 3.18.1)
+  - SDWebImage
 
 SPEC REPOS:
   trunk:
@@ -112,6 +116,7 @@ SPEC REPOS:
     - leveldb-library
     - nanopb
     - PromisesObjC
+    - SDWebImage
 
 SPEC CHECKSUMS:
   CodableFirebase: 0bf201991eeec35eb9fcd987d271ea463cf34a80
@@ -131,7 +136,8 @@ SPEC CHECKSUMS:
   leveldb-library: 55d93ee664b4007aac644a782d11da33fba316f7
   nanopb: 59317e09cf1f1a0af72f12af412d54edf52603fc
   PromisesObjC: 8c196f5a328c2cba3e74624585467a557dcb482f
+  SDWebImage: b69257f4ab14e9b6a2ef53e910fdf914d8f757c1
 
-PODFILE CHECKSUM: 5a7ac13bab85ff5929978ec5b9d811aa784bfb72
+PODFILE CHECKSUM: f3bb37fe463f4bfea1bb41c1e5aeb5b80cfd597d
 
 COCOAPODS: 1.10.0

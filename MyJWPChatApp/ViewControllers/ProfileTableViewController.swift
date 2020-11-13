@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import SDWebImage
 
 class ProfileTableViewController: UITableViewController {
     var selectedUser: User?
@@ -40,9 +41,13 @@ class ProfileTableViewController: UITableViewController {
         let user = ProfileManager.users[indexPath.row]
         cell.profileNameLabel.text = user.username
 
-
-        // Mock data
-        cell.profileImageView.image = #imageLiteral(resourceName: "icons8-female_user")
+        if let gravatarURL = user.gravatarImageUrl {
+            
+            cell.profileImageView.sd_setImage(with: URL(string: gravatarURL), placeholderImage: #imageLiteral(resourceName: "icons8-name"))
+        } else {
+            // Mock data
+            cell.profileImageView.image = #imageLiteral(resourceName: "icons8-female_user")
+        }
         
         return cell
     }

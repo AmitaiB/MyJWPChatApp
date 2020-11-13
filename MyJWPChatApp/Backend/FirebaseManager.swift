@@ -41,48 +41,42 @@ class FirebaseManager {
     /**
      1. Creates a user in FireBase (Dashboard -> Users tab) (email, password, uid).
      2. Creates a `User` *object* from the created user (has a username).
-     3. Login with as normal.
+     3. Login with the new credentials as normal.
      */
     static func createAccount(email: String, password: String, username: String, completion: @escaping (_ result: AuthDataResultType) -> Void) {
-        // 1. Create a Firebase user
+        // 1. Create a Firebase 'Authenticated User'
         Auth.auth().createUser(withEmail: email, password: password) {
             let result = resultFrom(firebaseResponse: $0, $1)
+            
             switch result {
                 case .failure(let error):
                     print(error.localizedDescription)
                 case .success(let data):
-                    break
+                    // 2. Create a user object in our Firebase db
+                    addUser(from: data, username: username)
+                    
+                    // 3. Login as the new user:
+                    login(email: email, password: password) {
+                        switch $0 {
+                            case .success(let response):
+                                print("Login successful after account creation")
+                            case .failure(let error):
+                                print("Login unsuccessful after account creation: \(error.localizedDescription)")
+                        }
+                        completion($0)
+                    }
             }
         }
-        
-        // 2. Associate a username with that new user (?)
-        addUser(username: username, email: email)
-        
-        // Login as the new user:
-        login(email: email, password: password) {
-            switch $0 {
-                case .success(let response):
-                    print("Login successful after account creation")
-                case .failure(let error):
-                    print("Login unsuccessful after account creation: \(error.localizedDescription)")
-            }
-            completion($0)
-        }
-        
     }
     
-    static func addUser(username: String, email: String) {
-        guard let uid = currentUser?.uid else { return }
-        let gravatarPlaceholder: String? = nil
-        let user = User(uid: uid,
-                        email: email,
-                        username: username,
-                        profileImageUrl: gravatarPlaceholder)
-        
+    static func addUser(from data: AuthDataResult, username: String?) {
+        guard var user = data.user.asLocalUserObj else { return }
+        user.username = username
+
         if let userData = try? FirebaseEncoder().encode(user) {
             dbRef
                 .child(L10n.DbPath.users)
-                .child(uid)
+                .child(user.uid)
                 .setValue(userData)
         }
     }
