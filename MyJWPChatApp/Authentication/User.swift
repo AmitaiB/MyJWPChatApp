@@ -8,7 +8,7 @@
 import Foundation
 import CryptoKit
 
-struct User: Codable {
+class User: Codable {
     // Properties shared with FirebaseAuth.User
     var uid: String
     var email: String?
@@ -22,5 +22,12 @@ struct User: Codable {
         let emailHash = Insecure.MD5.hash(data: emailData)
         let unheraldedHash = "\(emailHash)".dropFirst(L10n.md5PrefixToTrim.count)
         return L10n.gravatarBaseURL + unheraldedHash
+    }
+    
+    init(uid: String, email: String?, username: String?, profileImageUrl: String?) {
+        self.uid             = uid
+        self.email           = email
+        self.username        = username
+        self.profileImageUrl = profileImageUrl
     }
 }

@@ -36,6 +36,7 @@
 "dbPath.users"    = "users";
 "dbPath.email"    = "email";
 "dbPath.profileImageUrl" = "profileImageUrl";
+"dbPath.profileImages" = "profileimages";
 
 "dbPath.ownerUid" = "ownerUid";
 

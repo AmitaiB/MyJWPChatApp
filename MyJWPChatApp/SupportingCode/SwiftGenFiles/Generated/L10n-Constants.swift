@@ -50,6 +50,8 @@ internal enum L10n {
     internal static let ownerUid = L10n.tr("localizable", "dbPath.ownerUid")
     /// posts
     internal static let posts = L10n.tr("localizable", "dbPath.posts")
+    /// profileimages
+    internal static let profileImages = L10n.tr("localizable", "dbPath.profileImages")
     /// profileImageUrl
     internal static let profileImageUrl = L10n.tr("localizable", "dbPath.profileImageUrl")
     /// text
