@@ -85,11 +85,9 @@ class FirebaseManager {
     private static func resultFrom(firebaseResponse: AuthDataResult?, _ error: Error?) -> AuthDataResultType {
         if let response = firebaseResponse { return .success(response) }
         
-        return .failure(error ?? LoginError.unknownError)
+        return .failure(error ?? FirebaseError.unknownError("login error"))
     }
-    
-    enum LoginError: Error { case unknownError }
-    
+        
     private static func syncUsernameAndImageUrlFromDB(for user: User?) {
         guard let user = user else { return }
         
@@ -120,4 +118,8 @@ extension FirebaseAuth.User {
              username: uid,
              profileImageUrl: photoURL?.absoluteString)
     }
+}
+
+public enum FirebaseError: Error {
+    case unknownError(String)
 }
