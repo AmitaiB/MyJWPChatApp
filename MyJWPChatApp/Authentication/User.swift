@@ -6,6 +6,7 @@
 //
 
 import Foundation
+import CryptoKit
 
 struct User: Codable {
     // Properties shared with FirebaseAuth.User
@@ -15,4 +16,11 @@ struct User: Codable {
     // Properties unique to our user objects
     var username: String?
     var profileImageUrl: String?
+    
+    var gravatarImageUrl: String? {
+        guard let emailData = email?.data(using: .utf8) else { return nil }
+        let emailHash = Insecure.MD5.hash(data: emailData)
+        let unheraldedHash = "\(emailHash)".dropFirst(L10n.md5PrefixToTrim.count)
+        return L10n.gravatarBaseURL + unheraldedHash
+    }
 }

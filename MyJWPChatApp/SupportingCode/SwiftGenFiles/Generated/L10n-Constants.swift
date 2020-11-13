@@ -14,6 +14,10 @@ internal enum L10n {
   internal static let bigBuckBunnyURL = L10n.tr("localizable", "Big Buck Bunny URL")
   /// http://playertest.longtailvideo.com/adaptive/bipbop/gear4/prog_index.m3u8
   internal static let bipBopURL = L10n.tr("localizable", "Bip Bop URL")
+  /// https://secure.gravatar.com/avatar/
+  internal static let gravatarBaseURL = L10n.tr("localizable", "GravatarBaseURL")
+  /// MD5 digest: 
+  internal static let md5PrefixToTrim = L10n.tr("localizable", "MD5PrefixToTrim")
 
   internal enum Mock {
     internal enum User {
