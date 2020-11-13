@@ -30,6 +30,7 @@
 		118D34D72551066C00075ED2 /* ChatViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 118D34D62551066C00075ED2 /* ChatViewController.swift */; };
 		118D34DB2551068700075ED2 /* SettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 118D34DA2551068700075ED2 /* SettingsViewController.swift */; };
 		11AE1D4F255CF5F800044100 /* ProfileTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11AE1D4E255CF5F800044100 /* ProfileTableViewCell.swift */; };
+		11DC8AAB255DE864008C7F1E /* ProfileImageManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11DC8AAA255DE864008C7F1E /* ProfileImageManager.swift */; };
 		11DE52D32551A151009D5C36 /* FirebaseManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11DE52D22551A151009D5C36 /* FirebaseManager.swift */; };
 		11DE52E92551B38D009D5C36 /* PostManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11DE52E82551B38D009D5C36 /* PostManager.swift */; };
 		11DE52EC2551EF78009D5C36 /* ChatTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11DE52EB2551EF78009D5C36 /* ChatTableViewCell.swift */; };
@@ -39,7 +40,6 @@
 
 /* Begin PBXFileReference section */
 		111E8F55255633A700C6ED25 /* Codable+extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Codable+extensions.swift"; sourceTree = "<group>"; };
-		112ED6352554FA2200AD4D69 /* PostQueryResult.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostQueryResult.swift; sourceTree = "<group>"; };
 		112ED63E2555044F00AD4D69 /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		112ED641255508A100AD4D69 /* ProfileManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileManager.swift; sourceTree = "<group>"; };
 		112ED65825559AF700AD4D69 /* Post.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Post.swift; sourceTree = "<group>"; };
@@ -66,6 +66,7 @@
 		118D34D62551066C00075ED2 /* ChatViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatViewController.swift; sourceTree = "<group>"; };
 		118D34DA2551068700075ED2 /* SettingsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsViewController.swift; sourceTree = "<group>"; };
 		11AE1D4E255CF5F800044100 /* ProfileTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileTableViewCell.swift; sourceTree = "<group>"; };
+		11DC8AAA255DE864008C7F1E /* ProfileImageManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileImageManager.swift; sourceTree = "<group>"; };
 		11DE52D22551A151009D5C36 /* FirebaseManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirebaseManager.swift; sourceTree = "<group>"; };
 		11DE52E82551B38D009D5C36 /* PostManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostManager.swift; sourceTree = "<group>"; };
 		11DE52EB2551EF78009D5C36 /* ChatTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatTableViewCell.swift; sourceTree = "<group>"; };
@@ -210,7 +211,7 @@
 				11DE52D22551A151009D5C36 /* FirebaseManager.swift */,
 				11DE52E82551B38D009D5C36 /* PostManager.swift */,
 				112ED65825559AF700AD4D69 /* Post.swift */,
-				112ED6352554FA2200AD4D69 /* PostQueryResult.swift */,
+				11DC8AAA255DE864008C7F1E /* ProfileImageManager.swift */,
 			);
 			path = Backend;
 			sourceTree = "<group>";
@@ -368,6 +369,7 @@
 				11AE1D4F255CF5F800044100 /* ProfileTableViewCell.swift in Sources */,
 				112ED642255508A100AD4D69 /* ProfileManager.swift in Sources */,
 				11DE52EC2551EF78009D5C36 /* ChatTableViewCell.swift in Sources */,
+				11DC8AAB255DE864008C7F1E /* ProfileImageManager.swift in Sources */,
 				112ED65925559AF700AD4D69 /* Post.swift in Sources */,
 				118D34D72551066C00075ED2 /* ChatViewController.swift in Sources */,
 				115F7D2B254FABD600D5EDCD /* SceneDelegate.swift in Sources */,
