@@ -59,6 +59,8 @@ PODS:
   - FirebaseUI/Google (9.0.0):
     - FirebaseUI/Auth
     - GoogleSignIn (~> 5.0)
+  - FirebaseUI/OAuth (9.0.0):
+    - FirebaseUI/Auth
   - GoogleAppMeasurement (6.9.0):
     - GoogleUtilities/AppDelegateSwizzler (~> 6.7)
     - GoogleUtilities/MethodSwizzler (~> 6.7)
@@ -115,6 +117,7 @@ DEPENDENCIES:
   - Firebase/Storage
   - FirebaseUI/Auth
   - FirebaseUI/Google
+  - FirebaseUI/OAuth
   - JWPlayer-SDK (= 3.18.1)
 
 SPEC REPOS:
@@ -164,6 +167,6 @@ SPEC CHECKSUMS:
   nanopb: 59317e09cf1f1a0af72f12af412d54edf52603fc
   PromisesObjC: 8c196f5a328c2cba3e74624585467a557dcb482f
 
-PODFILE CHECKSUM: 01fdbe1baad1a752cc85364852c67b105cb6ea8b
+PODFILE CHECKSUM: a81abcdc7c53d73018a6c4962754b0b167fa3147
 
 COCOAPODS: 1.10.0

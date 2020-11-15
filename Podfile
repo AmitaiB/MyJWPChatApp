@@ -13,6 +13,7 @@ target 'MyJWPChatApp' do
   
   pod 'FirebaseUI/Auth'
   pod 'FirebaseUI/Google'
+  pod 'FirebaseUI/OAuth'
   
   pod 'CodableFirebase'
   
