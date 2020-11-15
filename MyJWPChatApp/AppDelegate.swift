@@ -7,6 +7,7 @@
 
 import UIKit
 import Firebase
+import FirebaseUI
 import AVFoundation
 
 @main
@@ -31,6 +32,18 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         return true
     }
 
+
+    func application(_ app: UIApplication, open url: URL,
+                     options: [UIApplication.OpenURLOptionsKey : Any]) -> Bool {
+        // https://firebase.google.com/docs/auth/ios/firebaseui
+        let sourceApplication = options[UIApplication.OpenURLOptionsKey.sourceApplication] as! String?
+        if FUIAuth.defaultAuthUI()?.handleOpen(url, sourceApplication: sourceApplication) ?? false {
+            return true
+        }
+        // other URL handling goes here.
+        return false
+    }
+    
     // MARK: UISceneSession Lifecycle
 
     func application(_ application: UIApplication, configurationForConnecting connectingSceneSession: UISceneSession, options: UIScene.ConnectionOptions) -> UISceneConfiguration {

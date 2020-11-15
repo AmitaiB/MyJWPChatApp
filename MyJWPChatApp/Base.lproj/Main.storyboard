@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="17156" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="cqq-vF-Vfv">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="17506" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="cqq-vF-Vfv">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17126"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17505"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
@@ -96,6 +96,13 @@
                                 <rect key="frame" x="8" y="304" width="398" height="30"/>
                                 <state key="normal" title="Update"/>
                             </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="x92-N5-TeQ">
+                                <rect key="frame" x="8" y="342" width="398" height="30"/>
+                                <state key="normal" title="Logout"/>
+                                <connections>
+                                    <action selector="logoutButtonTapped:" destination="Qgh-Nh-1Wr" eventType="touchUpInside" id="TxL-gA-b2w"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="h2Y-le-wU1"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
@@ -103,11 +110,14 @@
                             <constraint firstItem="4rk-6q-PbM" firstAttribute="leading" secondItem="h2Y-le-wU1" secondAttribute="leading" constant="8" id="2iP-ZF-nL5"/>
                             <constraint firstItem="4rk-6q-PbM" firstAttribute="top" secondItem="0mL-FP-JIi" secondAttribute="bottom" constant="8" symbolic="YES" id="3c5-0I-5hb"/>
                             <constraint firstItem="h2Y-le-wU1" firstAttribute="trailing" secondItem="0mL-FP-JIi" secondAttribute="trailing" constant="8" id="CGz-Fi-z4W"/>
+                            <constraint firstItem="x92-N5-TeQ" firstAttribute="leading" secondItem="4rk-6q-PbM" secondAttribute="leading" id="DdT-jt-YQS"/>
+                            <constraint firstItem="x92-N5-TeQ" firstAttribute="top" secondItem="4rk-6q-PbM" secondAttribute="bottom" constant="8" symbolic="YES" id="Rhs-0K-5xg"/>
                             <constraint firstItem="WZ2-ph-7qu" firstAttribute="top" secondItem="h2Y-le-wU1" secondAttribute="top" constant="30" id="Rvd-lr-9h3"/>
                             <constraint firstItem="0mL-FP-JIi" firstAttribute="leading" secondItem="h2Y-le-wU1" secondAttribute="leading" constant="8" id="YWr-hJ-NBo"/>
                             <constraint firstItem="WZ2-ph-7qu" firstAttribute="centerX" secondItem="h2Y-le-wU1" secondAttribute="centerX" id="dup-01-HHp"/>
                             <constraint firstItem="h2Y-le-wU1" firstAttribute="trailing" secondItem="4rk-6q-PbM" secondAttribute="trailing" constant="8" id="fBL-qD-GEZ"/>
                             <constraint firstItem="0mL-FP-JIi" firstAttribute="top" secondItem="WZ2-ph-7qu" secondAttribute="bottom" constant="20" id="tnQ-Qu-cvC"/>
+                            <constraint firstItem="x92-N5-TeQ" firstAttribute="trailing" secondItem="4rk-6q-PbM" secondAttribute="trailing" id="xEw-gb-lyV"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="2ec-Yn-aCb"/>

@@ -15,4 +15,11 @@ struct User: Codable {
     // Properties unique to our user objects
     var username: String?
     var profileImageUrl: String?
+    
+    /// Assigns any nil values to the source's value
+    mutating func fillNils(from srcUser: User) {
+        email           = email ?? srcUser.email
+        username        = username ?? srcUser.username
+        profileImageUrl = profileImageUrl ?? srcUser.profileImageUrl
+    }
 }

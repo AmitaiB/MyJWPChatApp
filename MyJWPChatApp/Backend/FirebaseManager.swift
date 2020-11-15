@@ -9,12 +9,13 @@ import Foundation
 import Firebase
 import FirebaseDatabase
 import FirebaseAuth
+import FirebaseUI
 
 import CodableFirebase
 
 typealias AuthDataResultType = Result<AuthDataResult, Error>
 
-class FirebaseManager {
+class FirebaseManager: NSObject {
     // MARK: Singleton - db management
     static var shared = FirebaseManager()
     private override init() {
@@ -26,14 +27,14 @@ class FirebaseManager {
     // MARK: - State properties
     /// The logged in user.
     var currentUser: User? { didSet {
-        syncUsernameAndImageUrlFromDB(for: currentUser) }
+        syncLocalUserObjectToRemote(for: currentUser) }
     }
     
+    // MARK: non-FirebaseUI login
     // On success, (1) signs in, (2) FirebaseManager saves the now logged in user locally
     func login(email: String,
                       password: String,
                       completion: @escaping (_ response: AuthDataResultType) -> Void) {
-        
         Auth.auth().signIn(withEmail: email, password: password) {
             let result = self.resultFrom(firebaseResponse: $0, $1)
             switch result {
@@ -43,8 +44,21 @@ class FirebaseManager {
                 case .failure(let error):
                     completion(.failure(error))
             }
-        }        
+        }
     }
+    
+    // MARK: - FirebaseUI login
+    
+    // Add additional sign in providers here
+    let fbUiAuthVC: UINavigationController? = {
+        let ui = FUIAuth.defaultAuthUI()
+        ui?.providers = [
+            FUIGoogleAuth(),
+        ]
+        return ui?.authViewController()
+    }()
+
+    // MARK: Common methods
     
     func setLocalUser(from user: FirebaseAuth.User) {
         currentUser = user.asLocalUserObj
@@ -107,7 +121,7 @@ class FirebaseManager {
     
     enum LoginError: Error { case unknownError }
     
-    private func syncUsernameAndImageUrlFromDB(for user: User?) {
+    private func syncLocalUserObjectToRemote(for user: User?) {
         guard let user = user else { return }
         
         //sync with user object
@@ -118,18 +132,26 @@ class FirebaseManager {
                 guard let value = $0.value else { return }
                 do {
                     let user = try FirebaseDecoder().decode(User.self, from: value)
-
-                    // overwrite local nil values
-                    self.currentUser?.username = self.currentUser?.username ?? user.username
-                    self.currentUser?.profileImageUrl = self.currentUser?.profileImageUrl ?? user.profileImageUrl
+                    self.currentUser?.fillNils(from: user)
                 }
                 catch { print(error.localizedDescription) }
             }
     }
     
-                }
-                catch { print(error.localizedDescription) }
-            }
+}
+
+// TODO: Static classes
+fileprivate class AuthDelegate: NSObject, FUIAuthDelegate {
+    func authUI(_ authUI: FUIAuth, didSignInWith authDataResult: AuthDataResult?, error: Error?) {
+        let fbManager = FirebaseManager.shared
+
+        let result = fbManager.resultFrom(firebaseResponse: authDataResult, error)
+        switch result {
+            case .success(let data):
+                fbManager.setLocalUser(from: data.user)
+            case .failure(let error):
+                print(error.localizedDescription)
+        }
     }
 }
 

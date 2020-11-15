@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import Firebase
 
 class SettingsViewController: UIViewController {
     var selectedUser: User?
@@ -16,6 +17,12 @@ class SettingsViewController: UIViewController {
         // Do any additional setup after loading the view.
     }
     
+    @IBAction func logoutButtonTapped(_ sender: Any) {
+        do {
+            try Auth.auth().signOut()
+        }
+        catch { print(error.localizedDescription) }
+    }
 
     /*
     // MARK: - Navigation
