@@ -25,7 +25,7 @@ class ChatViewController: UIViewController {
         super.viewDidAppear(animated)
         
         guard let selectedUserId = selectedUser?.uid else { return }
-        PostManager.fetchPosts(ownerUid: FirebaseManager.currentUser?.uid,
+        PostManager.fetchPosts(ownerUid: FirebaseManager.shared.currentUser?.uid,
                               toId: selectedUserId) {
             switch ($0) {
                 case .success(let value):
@@ -52,7 +52,7 @@ class ChatViewController: UIViewController {
             let message = userInputField.text,
             !message.isEmpty,
             let toId = selectedUser?.uid,
-            let currentUid = FirebaseManager.currentUser?.uid
+            let currentUid = FirebaseManager.shared.currentUser?.uid
         else {return}
               
         PostManager.addPost(username: username,

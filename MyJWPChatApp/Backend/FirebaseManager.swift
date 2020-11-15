@@ -15,22 +15,30 @@ import CodableFirebase
 typealias AuthDataResultType = Result<AuthDataResult, Error>
 
 class FirebaseManager {
-    static let dbRef = Database.database().reference()
-    /// The "logged in" user.
-    static var currentUser: User? { didSet {
+    // MARK: Singleton - db management
+    static var shared = FirebaseManager()
+    private override init() {
+        super.init()
+    }
+    
+    let dbRef = Database.database().reference()
+    
+    // MARK: - State properties
+    /// The logged in user.
+    var currentUser: User? { didSet {
         syncUsernameAndImageUrlFromDB(for: currentUser) }
     }
     
     // On success, (1) signs in, (2) FirebaseManager saves the now logged in user locally
-    static func login(email: String,
+    func login(email: String,
                       password: String,
                       completion: @escaping (_ response: AuthDataResultType) -> Void) {
         
         Auth.auth().signIn(withEmail: email, password: password) {
-            let result = resultFrom(firebaseResponse: $0, $1)
+            let result = self.resultFrom(firebaseResponse: $0, $1)
             switch result {
                 case .success(let data):
-                    currentUser   = data.user.asLocalUserObj
+                    self.setLocalUser(from: data.user)
                     completion(.success(data))
                 case .failure(let error):
                     completion(.failure(error))
@@ -38,31 +46,34 @@ class FirebaseManager {
         }        
     }
     
+    func setLocalUser(from user: FirebaseAuth.User) {
+        currentUser = user.asLocalUserObj
+    }
+    
     /**
      1. Creates a user in FireBase (Dashboard -> Users tab) (email, password, uid).
      2. Creates a `User` *object* from the created user (has a username).
      3. Login with as normal.
      */
-    static func createAccount(email: String, password: String, username: String, completion: @escaping (_ result: AuthDataResultType) -> Void) {
+    func createAccount(email: String, password: String, username: String, completion: @escaping (_ result: AuthDataResultType) -> Void) {
         // 1. Create a Firebase user
         Auth.auth().createUser(withEmail: email, password: password) {
-            let result = resultFrom(firebaseResponse: $0, $1)
+            let result = self.resultFrom(firebaseResponse: $0, $1)
             switch result {
                 case .failure(let error):
                     print(error.localizedDescription)
                 case .success(let data):
+                    // 2. Associate a username with that new user (?)
+                    self.addUser(username: username, email: email)
                     break
             }
         }
-        
-        // 2. Associate a username with that new user (?)
-        addUser(username: username, email: email)
-        
+                
         // Login as the new user:
         login(email: email, password: password) {
             switch $0 {
                 case .success(let response):
-                    print("Login successful after account creation")
+                    print("Login successful after account creation: \(response.user.description)")
                 case .failure(let error):
                     print("Login unsuccessful after account creation: \(error.localizedDescription)")
             }
@@ -71,7 +82,7 @@ class FirebaseManager {
         
     }
     
-    static func addUser(username: String, email: String) {
+    func addUser(username: String, email: String) {
         guard let uid = currentUser?.uid else { return }
         let gravatarPlaceholder: String? = nil
         let user = User(uid: uid,
@@ -88,7 +99,7 @@ class FirebaseManager {
     }
     
     /// Maps the Firebase Optional/Error response to a Swift 4+ Result type (`Result<AuthDataResult, Error>`).
-    private static func resultFrom(firebaseResponse: AuthDataResult?, _ error: Error?) -> AuthDataResultType {
+    fileprivate func resultFrom(firebaseResponse: AuthDataResult?, _ error: Error?) -> AuthDataResultType {
         if let response = firebaseResponse { return .success(response) }
         
         return .failure(error ?? LoginError.unknownError)
@@ -96,7 +107,7 @@ class FirebaseManager {
     
     enum LoginError: Error { case unknownError }
     
-    private static func syncUsernameAndImageUrlFromDB(for user: User?) {
+    private func syncUsernameAndImageUrlFromDB(for user: User?) {
         guard let user = user else { return }
         
         //sync with user object
@@ -109,9 +120,13 @@ class FirebaseManager {
                     let user = try FirebaseDecoder().decode(User.self, from: value)
 
                     // overwrite local nil values
-                    currentUser?.username = currentUser?.username ?? user.username
-                    currentUser?.profileImageUrl = currentUser?.profileImageUrl ?? user.profileImageUrl
-                    
+                    self.currentUser?.username = self.currentUser?.username ?? user.username
+                    self.currentUser?.profileImageUrl = self.currentUser?.profileImageUrl ?? user.profileImageUrl
+                }
+                catch { print(error.localizedDescription) }
+            }
+    }
+    
                 }
                 catch { print(error.localizedDescription) }
             }

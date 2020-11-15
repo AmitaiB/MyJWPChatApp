@@ -13,7 +13,7 @@ import CodableFirebase
 
 class ProfileManager {
     static let dbRef = Database.database().reference()
-    static let uid = FirebaseManager.currentUser?.uid
+    static let uid = FirebaseManager.shared.currentUser?.uid
     
     static var users = [User]()
     

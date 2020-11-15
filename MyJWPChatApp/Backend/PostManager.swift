@@ -47,7 +47,7 @@ class PostManager {
     // Well-named.
     static func addPost(username: String, text: String, toId: String, fromId: String) {
         guard !text.isEmpty,
-              let currentUid = FirebaseManager.currentUser?.uid
+              let currentUid = FirebaseManager.shared.currentUser?.uid
               else { return }
             
         let encodablePost = Post(toId: toId, text: text, ownerUid: currentUid, ownerUsername: username)
