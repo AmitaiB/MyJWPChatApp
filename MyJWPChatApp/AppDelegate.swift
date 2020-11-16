@@ -9,6 +9,7 @@ import UIKit
 import Firebase
 import FirebaseUI
 import AVFoundation
+import IQKeyboardManager
 
 @main
 class AppDelegate: UIResponder, UIApplicationDelegate {
@@ -19,7 +20,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         // Override point for customization after application launch.
         
         FirebaseApp.configure()
-        
         // Set category to playback
         do {
             try AVAudioSession.sharedInstance().setCategory(.playback)
@@ -29,13 +29,14 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
             print(error.localizedDescription)
         }
         
+        IQKeyboardManager.shared().isEnabled = true
+        
         return true
     }
 
 
     func application(_ app: UIApplication, open url: URL,
                      options: [UIApplication.OpenURLOptionsKey : Any]) -> Bool {
-        // https://firebase.google.com/docs/auth/ios/firebaseui
         let sourceApplication = options[UIApplication.OpenURLOptionsKey.sourceApplication] as! String?
         if FUIAuth.defaultAuthUI()?.handleOpen(url, sourceApplication: sourceApplication) ?? false {
             return true

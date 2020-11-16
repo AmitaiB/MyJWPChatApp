@@ -1,5 +1,5 @@
 # Uncomment the next line to define a global platform for your project
-platform :ios, '14.1'
+platform :ios, '14.2'
 
 target 'MyJWPChatApp' do
   # Comment the next line if you don't want to use dynamic frameworks
@@ -18,4 +18,6 @@ target 'MyJWPChatApp' do
   pod 'CodableFirebase'
   
   pod 'JWPlayer-SDK', '3.18.1'
+  
+  pod 'IQKeyboardManager'
 end

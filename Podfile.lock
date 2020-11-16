@@ -100,6 +100,7 @@ PODS:
   - GTMSessionFetcher/Core (1.5.0)
   - GTMSessionFetcher/Full (1.5.0):
     - GTMSessionFetcher/Core (= 1.5.0)
+  - IQKeyboardManager (6.5.6)
   - JWPlayer-SDK (3.18.1)
   - leveldb-library (1.22)
   - nanopb (1.30906.0):
@@ -118,6 +119,7 @@ DEPENDENCIES:
   - FirebaseUI/Auth
   - FirebaseUI/Google
   - FirebaseUI/OAuth
+  - IQKeyboardManager
   - JWPlayer-SDK (= 3.18.1)
 
 SPEC REPOS:
@@ -139,6 +141,7 @@ SPEC REPOS:
     - GoogleUtilities
     - GTMAppAuth
     - GTMSessionFetcher
+    - IQKeyboardManager
     - JWPlayer-SDK
     - leveldb-library
     - nanopb
@@ -162,11 +165,12 @@ SPEC CHECKSUMS:
   GoogleUtilities: 7f2f5a07f888cdb145101d6042bc4422f57e70b3
   GTMAppAuth: 197a8dabfea5d665224aa00d17f164fc2248dab9
   GTMSessionFetcher: b3503b20a988c4e20cc189aa798fd18220133f52
+  IQKeyboardManager: 2a6e97afdafc7becf0cb17a9a8d795e3a980717f
   JWPlayer-SDK: c892971007a9fbcf5f3ddc12098c5924e121a374
   leveldb-library: 55d93ee664b4007aac644a782d11da33fba316f7
   nanopb: 59317e09cf1f1a0af72f12af412d54edf52603fc
   PromisesObjC: 8c196f5a328c2cba3e74624585467a557dcb482f
 
-PODFILE CHECKSUM: a81abcdc7c53d73018a6c4962754b0b167fa3147
+PODFILE CHECKSUM: 6c714a14e6c52c284946ad26aa99504c1223bdd4
 
 COCOAPODS: 1.10.0
