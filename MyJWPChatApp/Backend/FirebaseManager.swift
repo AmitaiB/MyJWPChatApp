@@ -48,17 +48,20 @@ class FirebaseManager: NSObject {
     }
     
     // MARK: - FirebaseUI login
-    
-    // Add additional sign in providers here
-    let fbUiAuthVC: UINavigationController? = {
-        let ui = FUIAuth.defaultAuthUI()
-        ui?.providers = [
+    func getFUIAuthViewController() -> UINavigationController? {
+        let authUI = FUIAuth.defaultAuthUI()
+
+        // Add additional sign in providers here
+        authUI?.providers = [
             FUIGoogleAuth(),
             FUIOAuth.appleAuthProvider(),
         ]
-        return ui?.authViewController()
-    }()
+        authUI?.delegate = self
 
+        return authUI?.authViewController()
+    }
+    
+    
     // MARK: Common methods
     
     func setLocalUser(from user: FirebaseAuth.User) {
@@ -79,7 +82,7 @@ class FirebaseManager: NSObject {
                     print(error.localizedDescription)
                 case .success(let data):
                     // 2. Associate a username with that new user (?)
-                    self.addUser(username: username, email: email)
+                    self.addSignedInUserToDB(username: username, email: email)
                     break
             }
         }
@@ -97,13 +100,13 @@ class FirebaseManager: NSObject {
         
     }
     
-    func addUser(username: String, email: String) {
+    func addSignedInUserToDB(username: String?, email: String?) {
         guard let uid = currentUser?.uid else { return }
-        let gravatarPlaceholder: String? = nil
+
         let user = User(uid: uid,
                         email: email,
                         username: username,
-                        profileImageUrl: gravatarPlaceholder)
+                        profileImageUrl: nil)
         
         if let userData = try? FirebaseEncoder().encode(user) {
             dbRef
@@ -138,30 +141,31 @@ class FirebaseManager: NSObject {
                 catch { print(error.localizedDescription) }
             }
     }
-    
 }
 
-// TODO: Static classes
-fileprivate class AuthDelegate: NSObject, FUIAuthDelegate {
+// MARK: - FUIAuthDelegate
+extension FirebaseManager: FUIAuthDelegate {
     func authUI(_ authUI: FUIAuth, didSignInWith authDataResult: AuthDataResult?, error: Error?) {
-        let fbManager = FirebaseManager.shared
 
-        let result = fbManager.resultFrom(firebaseResponse: authDataResult, error)
+        let result = resultFrom(firebaseResponse: authDataResult, error)
         switch result {
             case .success(let data):
-                fbManager.setLocalUser(from: data.user)
+                setLocalUser(from: data.user)
+                let user = data.user.asLocalUserObj
+                addSignedInUserToDB(username: user.username, email: user.email)
+                
             case .failure(let error):
-                print(error.localizedDescription)
+                print("ERROR in \(#function): ", error.localizedDescription)
         }
     }
 }
 
 extension FirebaseAuth.User {
     /// - returns: a `MyJWPChatApp.User` object.
-    var asLocalUserObj: User? {
+    var asLocalUserObj: User {
         User(uid: uid,
              email: email,
-             username: uid,
+             username: email,
              profileImageUrl: photoURL?.absoluteString)
     }
 }

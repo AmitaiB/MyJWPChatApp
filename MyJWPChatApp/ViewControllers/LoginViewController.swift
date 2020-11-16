@@ -19,7 +19,7 @@ class LoginViewController: UIViewController {
 
     @IBAction func loginButtonTapped(_ sender: Any) {
         //fbUI
-        guard let authUIVC = FirebaseManager.shared.fbUiAuthVC else { return }
+        guard let authUIVC = FirebaseManager.shared.getFUIAuthViewController() else { return }
         present(authUIVC, animated: true, completion: nil)
 
 //        guard

@@ -28,15 +28,14 @@ class ChatViewController: UIViewController {
         PostManager.fetchPosts(ownerUid: FirebaseManager.shared.currentUser?.uid,
                               toId: selectedUserId) {
             switch ($0) {
+                case .failure(let error):
+                    print(error)
                 case .success(let value):
                     print("\(value)")
                     
                     DispatchQueue.main.async {
                         self.tableView.reloadData()
                     }
-                    
-                case .failure(let error):
-                    print(error)
             }
         }
     }
@@ -62,8 +61,6 @@ class ChatViewController: UIViewController {
         
         userInputField.clearField()
     }
-    
-    
 }
 
 extension ChatViewController: UITableViewDataSource {
@@ -88,6 +85,7 @@ extension ChatViewController: UITableViewDelegate {
 
 extension ChatViewController: UITextViewDelegate {
     func textViewDidChange(_ textView: UITextView) {
+        // ????
         let currentOffset = tableView.contentOffset
         UIView.setAnimationsEnabled(false)
         tableView.beginUpdates()
