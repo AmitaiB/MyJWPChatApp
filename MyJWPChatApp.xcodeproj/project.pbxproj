@@ -19,6 +19,7 @@
 		115F7D35254FABD800D5EDCD /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 115F7D33254FABD800D5EDCD /* LaunchScreen.storyboard */; };
 		115F7D3E254FAD0D00D5EDCD /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 115F7D3D254FAD0D00D5EDCD /* GoogleService-Info.plist */; };
 		115F7D53254FB7F500D5EDCD /* Login.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 115F7D52254FB7F500D5EDCD /* Login.storyboard */; };
+		11695CF825637FCA00421DE2 /* Foundation+extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11695CF725637FCA00421DE2 /* Foundation+extensions.swift */; };
 		118D349625507B9800075ED2 /* JWPlayerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 118D349525507B9800075ED2 /* JWPlayerViewController.swift */; };
 		118D34B125507D3200075ED2 /* UIKit+extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 118D34B025507D3200075ED2 /* UIKit+extensions.swift */; };
 		118D34C32550FA3300075ED2 /* localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 118D34C22550FA3300075ED2 /* localizable.strings */; };
@@ -30,7 +31,6 @@
 		118D34D72551066C00075ED2 /* ChatViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 118D34D62551066C00075ED2 /* ChatViewController.swift */; };
 		118D34DB2551068700075ED2 /* SettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 118D34DA2551068700075ED2 /* SettingsViewController.swift */; };
 		11AE1D4F255CF5F800044100 /* ProfileTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11AE1D4E255CF5F800044100 /* ProfileTableViewCell.swift */; };
-		11DC8AAB255DE864008C7F1E /* ProfileImageManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11DC8AAA255DE864008C7F1E /* ProfileImageManager.swift */; };
 		11DE52D32551A151009D5C36 /* FirebaseManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11DE52D22551A151009D5C36 /* FirebaseManager.swift */; };
 		11DE52E92551B38D009D5C36 /* PostManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11DE52E82551B38D009D5C36 /* PostManager.swift */; };
 		11DE52EC2551EF78009D5C36 /* ChatTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11DE52EB2551EF78009D5C36 /* ChatTableViewCell.swift */; };
@@ -54,6 +54,7 @@
 		115F7D3D254FAD0D00D5EDCD /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		115F7D50254FB2FF00D5EDCD /* MyJWPChatApp.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = MyJWPChatApp.entitlements; sourceTree = "<group>"; };
 		115F7D52254FB7F500D5EDCD /* Login.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Login.storyboard; sourceTree = "<group>"; };
+		11695CF725637FCA00421DE2 /* Foundation+extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Foundation+extensions.swift"; sourceTree = "<group>"; };
 		118D349525507B9800075ED2 /* JWPlayerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JWPlayerViewController.swift; sourceTree = "<group>"; };
 		118D34AB25507CF000075ED2 /* MyJWPChatApp-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "MyJWPChatApp-Bridging-Header.h"; sourceTree = "<group>"; };
 		118D34B025507D3200075ED2 /* UIKit+extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIKit+extensions.swift"; sourceTree = "<group>"; };
@@ -66,7 +67,6 @@
 		118D34D62551066C00075ED2 /* ChatViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatViewController.swift; sourceTree = "<group>"; };
 		118D34DA2551068700075ED2 /* SettingsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsViewController.swift; sourceTree = "<group>"; };
 		11AE1D4E255CF5F800044100 /* ProfileTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileTableViewCell.swift; sourceTree = "<group>"; };
-		11DC8AAA255DE864008C7F1E /* ProfileImageManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileImageManager.swift; sourceTree = "<group>"; };
 		11DE52D22551A151009D5C36 /* FirebaseManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirebaseManager.swift; sourceTree = "<group>"; };
 		11DE52E82551B38D009D5C36 /* PostManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostManager.swift; sourceTree = "<group>"; };
 		11DE52EB2551EF78009D5C36 /* ChatTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatTableViewCell.swift; sourceTree = "<group>"; };
@@ -156,6 +156,7 @@
 				118D34B025507D3200075ED2 /* UIKit+extensions.swift */,
 				111E8F55255633A700C6ED25 /* Codable+extensions.swift */,
 				11EDDB0C255DAF16005B1F82 /* NSObject+extensions.swift */,
+				11695CF725637FCA00421DE2 /* Foundation+extensions.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -211,7 +212,6 @@
 				11DE52D22551A151009D5C36 /* FirebaseManager.swift */,
 				11DE52E82551B38D009D5C36 /* PostManager.swift */,
 				112ED65825559AF700AD4D69 /* Post.swift */,
-				11DC8AAA255DE864008C7F1E /* ProfileImageManager.swift */,
 			);
 			path = Backend;
 			sourceTree = "<group>";
@@ -362,6 +362,7 @@
 				11EDDB0D255DAF17005B1F82 /* NSObject+extensions.swift in Sources */,
 				118D34CE2550FF0800075ED2 /* StoryboardScenes.swift in Sources */,
 				11DE52E92551B38D009D5C36 /* PostManager.swift in Sources */,
+				11695CF825637FCA00421DE2 /* Foundation+extensions.swift in Sources */,
 				115F7D29254FABD600D5EDCD /* AppDelegate.swift in Sources */,
 				118D34CD2550FF0800075ED2 /* L10n-Constants.swift in Sources */,
 				111E8F56255633A700C6ED25 /* Codable+extensions.swift in Sources */,
@@ -369,7 +370,6 @@
 				11AE1D4F255CF5F800044100 /* ProfileTableViewCell.swift in Sources */,
 				112ED642255508A100AD4D69 /* ProfileManager.swift in Sources */,
 				11DE52EC2551EF78009D5C36 /* ChatTableViewCell.swift in Sources */,
-				11DC8AAB255DE864008C7F1E /* ProfileImageManager.swift in Sources */,
 				112ED65925559AF700AD4D69 /* Post.swift in Sources */,
 				118D34D72551066C00075ED2 /* ChatViewController.swift in Sources */,
 				115F7D2B254FABD600D5EDCD /* SceneDelegate.swift in Sources */,

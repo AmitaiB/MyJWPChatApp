@@ -41,14 +41,9 @@ class ProfileTableViewController: UITableViewController {
         let user = ProfileManager.users[indexPath.row]
         cell.profileNameLabel.text = user.username
 
-        if let gravatarURL = user.gravatarImageUrl {
-            
-            cell.profileImageView.sd_setImage(with: URL(string: gravatarURL), placeholderImage: #imageLiteral(resourceName: "icons8-name"))
-        } else {
-            // Mock data
-            cell.profileImageView.image = #imageLiteral(resourceName: "icons8-female_user")
-        }
-        
+        let imageUrl = user.profileImageUrl ?? user.gravatarImageUrl ?? ""
+        cell.profileImageView.sd_setImage(with: URL(string: imageUrl), placeholderImage: #imageLiteral(resourceName: "icons8-name"))
+
         return cell
     }
     
