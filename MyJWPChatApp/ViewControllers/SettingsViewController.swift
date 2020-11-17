@@ -8,7 +8,11 @@
 import UIKit
 
 class SettingsViewController: UIViewController {
-    var selectedUser: User?
+    @IBOutlet weak var profileImageView: UIImageView!
+    @IBOutlet weak var displayNameLabel: UILabel!
+
+    var currentUser: User?
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -16,7 +20,13 @@ class SettingsViewController: UIViewController {
         // Do any additional setup after loading the view.
     }
     
-
+    
+    @IBAction func getPhotoButtonTapped(_ sender: Any) {
+    }
+    
+    @IBAction func updateButtonTapped(_ sender: Any) {
+    }
+    }
     /*
     // MARK: - Navigation
 
