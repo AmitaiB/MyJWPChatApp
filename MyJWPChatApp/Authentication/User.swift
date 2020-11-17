@@ -34,8 +34,7 @@ extension User {
         let profileImageRef = Storage.storage().reference()
             .child(L10n.DbPath.profileImages)
             .child("\(UUID().uuidString).jpg")
-        
-        
+
         // early-exit
         guard let imageData = profileImage.jpegData(compressionQuality: 0.25)
         else {
@@ -45,29 +44,28 @@ extension User {
         
         profileImageRef.putData(imageData, metadata: nil) {
             let metadataResponse = self.resultFrom(metadataResponse: $0, $1)
-            
             switch metadataResponse {
                 case .failure(let error):
                     print(error.localizedDescription)
-                case .success(let metadata):
-                    metadata.storageReference?.downloadURL() {
+                case .success(_):
+                    // Get the image's download url
+                    profileImageRef.downloadURL() {
                         let result = self.resultFrom(urlResponse: $0, $1)
-                        self.handleImageDownload(result: result)
+                        self.handleImageDownloadResult(result)
                     }
             }
         }
-        
     }
 
-    private func handleImageDownload(result: DownloadURLResult) {
+    private func handleImageDownloadResult(_ result: DownloadURLResult) {
         switch result {
             case .failure(let error):
                 print(error.localizedDescription)
             case .success(let url):
-                if self.profileImageUrl.isNilOrEmpty
-                {
+//                if self.profileImageUrl.isNilOrEmpty
+//                {
                     self.updateProfileImageURL(url: url)
-                }
+//                }
         }
     }
     
@@ -94,7 +92,7 @@ extension User {
     
     typealias DownloadURLResult = Result<URL, Error>
     
-    
+    // unused
     /// Maps the Firebase Optional/Error response to a Swift 4+ Result type (`Result<AuthDataResult, Error>`).
     private func resultFrom(metadataResponse: StorageMetadata?, _ error: Error?) -> StorageMetadataResult {
         if let response = metadataResponse { return .success(response) }
