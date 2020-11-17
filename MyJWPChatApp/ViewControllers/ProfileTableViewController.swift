@@ -60,9 +60,10 @@ class ProfileTableViewController: UITableViewController {
             case .showChatViewSegueID:
                 let chatVC = segue.destination as? ChatViewController
                 chatVC?.selectedUser = selectedUser
+
             case .showSettingsSegueID:
                 let settingsVC = segue.destination as? SettingsViewController
-                settingsVC?.selectedUser = selectedUser
+                settingsVC?.currentUser = ProfileManager.getLocalUser(withUid: FirebaseManager.currentUser?.uid)
             case .none:
                 break
         }        
