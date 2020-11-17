@@ -13,16 +13,17 @@ import CodableFirebase
 
 class ProfileManager {
     static let dbRef = Database.database().reference()
-    static let uid = FirebaseManager.shared.currentUser?.uid
+    static let uid = Auth.auth().currentUser?.uid
     
     static var users = [User]()
     
-    static func getCurrentUser(uid: String) -> User? {
-        if let idx = users.firstIndex(where: {$0.uid == uid}) {
-            return users[idx]
-        } else {
-            return nil
-        }
+    // Given the uid from Auth, give us a local user object
+    static func getLocalUser(withUid uid: String?) -> User? {
+        guard let uid = uid,
+              let idx = users.firstIndex(where: {$0.uid == uid})
+        else { return nil }
+        
+        return users[idx]
     }
     
     static func clearUsers() {

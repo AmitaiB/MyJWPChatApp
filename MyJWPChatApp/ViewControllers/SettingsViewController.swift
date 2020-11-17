@@ -9,7 +9,11 @@ import UIKit
 import Firebase
 
 class SettingsViewController: UIViewController {
-    var selectedUser: User?
+    @IBOutlet weak var profileImageView: UIImageView!
+    @IBOutlet weak var displayNameLabel: UILabel!
+
+    var currentUser: User?
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -17,6 +21,26 @@ class SettingsViewController: UIViewController {
         // Do any additional setup after loading the view.
     }
     
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        displayNameLabel.text = currentUser?.username
+    }
+    
+    @IBAction func getPhotoButtonTapped(_ sender: Any) {
+        let imagePicker = UIImagePickerController()
+        imagePicker.delegate = self
+        imagePicker.sourceType = .photoLibrary
+        present(imagePicker, animated: true, completion: nil)
+    }
+    
+    @IBAction func updateButtonTapped(_ sender: Any) {
+        uploadPhoto()
+    }
+    
+    func uploadPhoto() {
+        guard let profileImage = profileImageView.image else { return }
+        currentUser?.uploadProfilePhoto(profileImage)
+    }
     @IBAction func logoutButtonTapped(_ sender: Any) {
         do {
             try Auth.auth().signOut()
@@ -34,4 +58,16 @@ class SettingsViewController: UIViewController {
     }
     */
 
+}
+
+extension SettingsViewController: UIImagePickerControllerDelegate {
+    func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any])
+    {
+        profileImageView.image = info[.originalImage] as? UIImage
+        dismiss(animated: true, completion: nil)
+    }
+}
+
+extension SettingsViewController: UINavigationControllerDelegate {
+    
 }

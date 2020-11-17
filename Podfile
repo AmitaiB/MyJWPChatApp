@@ -17,6 +17,8 @@ target 'MyJWPChatApp' do
   
   pod 'CodableFirebase'
   
+  pod 'SDWebImage'
+  
   pod 'JWPlayer-SDK', '3.18.1'
   
   pod 'IQKeyboardManager'

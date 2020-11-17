@@ -34,8 +34,11 @@ class PostManager {
                 do {
                     let newPost = try FirebaseDecoder().decode(Post.self, from: postData)
 
-                    PostManager.posts.append(newPost)
-                    completion(.success(newPost))
+                    // only add posts part of this two-person thread
+                    if newPost.toId == toId {
+                        PostManager.posts.append(newPost)
+                        completion(.success(newPost))
+                    }
                 }
                 catch {
                     print(error.localizedDescription)

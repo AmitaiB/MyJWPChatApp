@@ -13,6 +13,8 @@
 // URLs
 "Bip Bop URL" = "http://playertest.longtailvideo.com/adaptive/bipbop/gear4/prog_index.m3u8";
 "Big Buck Bunny URL" = "http://commondatastorage.googleapis.com/gtv-videos-bucket/sample/BigBuckBunny.mp4";
+"GravatarBaseURL" = "https://secure.gravatar.com/avatar/";
+"MD5PrefixToTrim" = "MD5 digest: ";
 
 
 // UI
@@ -34,6 +36,7 @@
 "dbPath.users"    = "users";
 "dbPath.email"    = "email";
 "dbPath.profileImageUrl" = "profileImageUrl";
+"dbPath.profileImages" = "profileimages";
 
 "dbPath.ownerUid" = "ownerUid";
 

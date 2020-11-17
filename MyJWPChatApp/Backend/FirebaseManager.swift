@@ -71,7 +71,7 @@ class FirebaseManager: NSObject {
     /**
      1. Creates a user in FireBase (Dashboard -> Users tab) (email, password, uid).
      2. Creates a `User` *object* from the created user (has a username).
-     3. Login with as normal.
+     3. Login with the new credentials as normal.
      */
     func createAccount(email: String, password: String, username: String, completion: @escaping (_ result: AuthDataResultType) -> Void) {
         // 1. Create a Firebase user
@@ -111,7 +111,7 @@ class FirebaseManager: NSObject {
         if let userData = try? FirebaseEncoder().encode(user) {
             dbRef
                 .child(L10n.DbPath.users)
-                .child(uid)
+                .child(user.uid)
                 .setValue(userData)
         }
     }
@@ -120,7 +120,7 @@ class FirebaseManager: NSObject {
     fileprivate func resultFrom(firebaseResponse: AuthDataResult?, _ error: Error?) -> AuthDataResultType {
         if let response = firebaseResponse { return .success(response) }
         
-        return .failure(error ?? LoginError.unknownError)
+        return .failure(error ?? FirebaseError.unknownError("login error"))
     }
     
     enum LoginError: Error { case unknownError }
@@ -168,4 +168,8 @@ extension FirebaseAuth.User {
              username: email,
              profileImageUrl: photoURL?.absoluteString)
     }
+}
+
+public enum FirebaseError: Error {
+    case unknownError(String)
 }

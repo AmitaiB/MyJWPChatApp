@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import SDWebImage
 
 class ProfileTableViewController: UITableViewController {
     var selectedUser: User?
@@ -40,10 +41,9 @@ class ProfileTableViewController: UITableViewController {
         let user = ProfileManager.users[indexPath.row]
         cell.profileNameLabel.text = user.username
 
+        let imageUrl = user.profileImageUrl ?? user.gravatarImageUrl ?? ""
+        cell.profileImageView.sd_setImage(with: URL(string: imageUrl), placeholderImage: #imageLiteral(resourceName: "icons8-name"))
 
-        // Mock data
-        cell.profileImageView.image = #imageLiteral(resourceName: "icons8-female_user")
-        
         return cell
     }
     
@@ -60,9 +60,10 @@ class ProfileTableViewController: UITableViewController {
             case .showChatViewSegueID:
                 let chatVC = segue.destination as? ChatViewController
                 chatVC?.selectedUser = selectedUser
+
             case .showSettingsSegueID:
                 let settingsVC = segue.destination as? SettingsViewController
-                settingsVC?.selectedUser = selectedUser
+                settingsVC?.currentUser = ProfileManager.getLocalUser(withUid: FirebaseManager.currentUser?.uid)
             case .none:
                 break
         }        
