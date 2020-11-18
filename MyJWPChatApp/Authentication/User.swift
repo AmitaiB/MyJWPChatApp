@@ -28,7 +28,7 @@ class User: Codable {
     }
     
     /// Assigns any nil values to the source's value
-    mutating func fillNils(from srcUser: User) {
+    func fillNils(from srcUser: User) {
         email           = email ?? srcUser.email
         username        = username ?? srcUser.username
         profileImageUrl = profileImageUrl ?? srcUser.profileImageUrl
@@ -81,7 +81,7 @@ extension User {
         profileImageUrl = url.absoluteString
         
         // update this user's remote store
-        FirebaseManager.dbRef
+        FirebaseManager.shared.dbRef
             .child(L10n.DbPath.users)
             .child(uid)
             .updateChildValues([L10n.DbPath.profileImageUrl: url.absoluteString])

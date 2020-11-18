@@ -63,7 +63,7 @@ class ProfileTableViewController: UITableViewController {
 
             case .showSettingsSegueID:
                 let settingsVC = segue.destination as? SettingsViewController
-                settingsVC?.currentUser = ProfileManager.getLocalUser(withUid: FirebaseManager.currentUser?.uid)
+                settingsVC?.currentUser = ProfileManager.getLocalUser(withUid: FirebaseManager.shared.currentUser?.uid)
             case .none:
                 break
         }        
