@@ -14,12 +14,12 @@ class ProfileTableViewCell: UITableViewCell {
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
+        
+        adjustImageToProfileStyle()
     }
-
-    override func setSelected(_ selected: Bool, animated: Bool) {
-        super.setSelected(selected, animated: animated)
-
-        // Configure the view for the selected state
+    
+    private func adjustImageToProfileStyle() {
+        profileImageView.layer.cornerRadius = 15
+        profileImageView.layer.masksToBounds = true
     }
-
 }
