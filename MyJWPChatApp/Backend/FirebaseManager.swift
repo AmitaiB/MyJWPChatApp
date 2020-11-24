@@ -71,7 +71,6 @@ class FirebaseManager: NSObject {
     /**
      1. Creates a user in FireBase (Dashboard -> Users tab) (email, password, uid).
      2. Creates a `User` *object* from the created user (has a username).
-     3. Login with the new credentials as normal.
      */
     func createAccount(email: String, password: String, username: String, completion: @escaping (_ result: AuthDataResultType) -> Void) {
         // 1. Create a Firebase user
@@ -80,24 +79,11 @@ class FirebaseManager: NSObject {
             switch result {
                 case .failure(let error):
                     print(error.localizedDescription)
-                case .success(let data):
+                case .success(_):
                     // 2. Associate a username with that new user (?)
                     self.addSignedInUserToDB(username: username, email: email)
-                    break
             }
-        }
-                
-        // Login as the new user:
-        login(email: email, password: password) {
-            switch $0 {
-                case .success(let response):
-                    print("Login successful after account creation: \(response.user.description)")
-                case .failure(let error):
-                    print("Login unsuccessful after account creation: \(error.localizedDescription)")
-            }
-            completion($0)
-        }
-        
+        }                
     }
     
     func addSignedInUserToDB(username: String?, email: String?) {
@@ -123,8 +109,7 @@ class FirebaseManager: NSObject {
         return .failure(error ?? FirebaseError.unknownError("login error"))
     }
     
-    enum LoginError: Error { case unknownError }
-    
+    /// Firebase User is just a uid
     private func syncLocalUserObjectToRemote(for user: User?) {
         guard let user = user else { return }
         

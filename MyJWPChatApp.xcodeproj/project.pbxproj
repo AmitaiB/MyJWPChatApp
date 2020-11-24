@@ -19,7 +19,6 @@
 		115F7D35254FABD800D5EDCD /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 115F7D33254FABD800D5EDCD /* LaunchScreen.storyboard */; };
 		115F7D3E254FAD0D00D5EDCD /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 115F7D3D254FAD0D00D5EDCD /* GoogleService-Info.plist */; };
 		115F7D53254FB7F500D5EDCD /* Login.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 115F7D52254FB7F500D5EDCD /* Login.storyboard */; };
-		117458A92560A28800F11660 /* AppLaunchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 117458A82560A28800F11660 /* AppLaunchViewController.swift */; };
 		11695CF825637FCA00421DE2 /* Foundation+extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11695CF725637FCA00421DE2 /* Foundation+extensions.swift */; };
 		118D349625507B9800075ED2 /* JWPlayerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 118D349525507B9800075ED2 /* JWPlayerViewController.swift */; };
 		118D34B125507D3200075ED2 /* UIKit+extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 118D34B025507D3200075ED2 /* UIKit+extensions.swift */; };
@@ -55,7 +54,6 @@
 		115F7D3D254FAD0D00D5EDCD /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		115F7D50254FB2FF00D5EDCD /* MyJWPChatApp.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = MyJWPChatApp.entitlements; sourceTree = "<group>"; };
 		115F7D52254FB7F500D5EDCD /* Login.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Login.storyboard; sourceTree = "<group>"; };
-		117458A82560A28800F11660 /* AppLaunchViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppLaunchViewController.swift; sourceTree = "<group>"; };
 		11695CF725637FCA00421DE2 /* Foundation+extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Foundation+extensions.swift"; sourceTree = "<group>"; };
 		118D349525507B9800075ED2 /* JWPlayerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JWPlayerViewController.swift; sourceTree = "<group>"; };
 		118D34AB25507CF000075ED2 /* MyJWPChatApp-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "MyJWPChatApp-Bridging-Header.h"; sourceTree = "<group>"; };
@@ -143,7 +141,6 @@
 		118D34BB2550F95900075ED2 /* ViewControllers */ = {
 			isa = PBXGroup;
 			children = (
-				117458A82560A28800F11660 /* AppLaunchViewController.swift */,
 				115F7D2C254FABD600D5EDCD /* LoginViewController.swift */,
 				118D34D32551062300075ED2 /* ProfileTableViewController.swift */,
 				118D34D62551066C00075ED2 /* ChatViewController.swift */,
@@ -392,7 +389,6 @@
 				112ED642255508A100AD4D69 /* ProfileManager.swift in Sources */,
 				11DE52EC2551EF78009D5C36 /* ChatTableViewCell.swift in Sources */,
 				112ED65925559AF700AD4D69 /* Post.swift in Sources */,
-				117458A92560A28800F11660 /* AppLaunchViewController.swift in Sources */,
 				118D34D72551066C00075ED2 /* ChatViewController.swift in Sources */,
 				115F7D2B254FABD600D5EDCD /* SceneDelegate.swift in Sources */,
 			);
