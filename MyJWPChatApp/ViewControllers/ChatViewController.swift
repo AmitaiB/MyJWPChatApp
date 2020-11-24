@@ -19,6 +19,8 @@ class ChatViewController: UIViewController {
         
         tableView.estimatedRowHeight = 88
         tableView.rowHeight = UITableView.automaticDimension
+        
+        userInputField.inputView?.backgroundColor = .systemGroupedBackground
     }
     
     override func viewDidAppear(_ animated: Bool) {

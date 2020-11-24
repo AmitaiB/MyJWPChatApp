@@ -11,14 +11,26 @@ import Firebase
 class SettingsViewController: UIViewController {
     @IBOutlet weak var profileImageView: UIImageView!
     @IBOutlet weak var displayNameLabel: UILabel!
-
-    var currentUser: User?
-    
+    /// `FirebaseManager.shared.currentUser`
+    var currentUser: User? {FirebaseManager.shared.currentUser}
     
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        // Do any additional setup after loading the view.
+        setupProfileImage()
+    }
+
+    private func setupProfileImage() {
+        profileImageView.layer.cornerRadius  = 15
+        profileImageView.layer.masksToBounds = true
+        
+        guard let urlStr = currentUser?.profileImageUrl,
+              let url = URL(string: urlStr)
+        else { return }
+        profileImageView.sd_setImage(with: url,
+                                     placeholderImage: #imageLiteral(resourceName: "icons8-name"),
+                                     options: [.continueInBackground],
+                                     context: nil)
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -41,25 +53,16 @@ class SettingsViewController: UIViewController {
         guard let profileImage = profileImageView.image else { return }
         currentUser?.uploadProfilePhoto(profileImage)
     }
+    
     @IBAction func logoutButtonTapped(_ sender: Any) {
         do {
             try Auth.auth().signOut()
         }
         catch { print(error.localizedDescription) }
     }
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
-    }
-    */
-
 }
 
+// MARK: - UIImagePickerControllerDelegate
 extension SettingsViewController: UIImagePickerControllerDelegate {
     func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any])
     {

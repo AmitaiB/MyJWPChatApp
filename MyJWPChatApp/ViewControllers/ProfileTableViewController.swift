@@ -13,12 +13,6 @@ class ProfileTableViewController: UITableViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        // Uncomment the following line to preserve selection between presentations
-        // self.clearsSelectionOnViewWillAppear = false
-
-        // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
-        // self.navigationItem.rightBarButtonItem = self.editButtonItem
         
         tableView.reloadData()
         ProfileManager.fillUsers {
@@ -60,11 +54,7 @@ class ProfileTableViewController: UITableViewController {
             case .showChatViewSegueID:
                 let chatVC = segue.destination as? ChatViewController
                 chatVC?.selectedUser = selectedUser
-
-            case .showSettingsSegueID:
-                let settingsVC = segue.destination as? SettingsViewController
-                settingsVC?.currentUser = ProfileManager.getLocalUser(withUid: FirebaseManager.shared.currentUser?.uid)
-            case .none:
+            default:
                 break
         }        
     }
