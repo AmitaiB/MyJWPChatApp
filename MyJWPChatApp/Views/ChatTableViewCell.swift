@@ -14,6 +14,7 @@ class ChatTableViewCell: UITableViewCell {
         super.awakeFromNib()
         // Initialization code
         messageTextView.layer.cornerRadius = 10
+        messageTextView.layer.masksToBounds = false
     }
 
     override func setSelected(_ selected: Bool, animated: Bool) {
