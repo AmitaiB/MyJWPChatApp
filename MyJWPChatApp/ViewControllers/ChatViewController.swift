@@ -19,16 +19,15 @@ class ChatViewController: UIViewController {
         
         tableView.estimatedRowHeight = 88
         tableView.rowHeight = UITableView.automaticDimension
-        
-        userInputField.inputView?.backgroundColor = .systemGroupedBackground
     }
     
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
         
         guard let selectedUserId = selectedUser?.uid else { return }
-        PostManager.fetchPosts(ownerUid: FirebaseManager.shared.currentUser?.uid,
-                              toId: selectedUserId) {
+        PostManager.fetchPosts(ownerUid: FirebaseManager.shared.currentUserID,
+                              toId: selectedUserId)
+        {
             switch ($0) {
                 case .failure(let error):
                     print(error)

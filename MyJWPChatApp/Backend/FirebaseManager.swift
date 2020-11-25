@@ -25,10 +25,11 @@ class FirebaseManager: NSObject {
     let dbRef = Database.database().reference()
     
     // MARK: - State properties
-    /// The logged in user.
-    var currentUser: User? { didSet {
-        syncLocalUserObjectToRemote(for: currentUser) }
+    /// The logged in user (should be cached).    
+    var currentUser: User? {
+        ProfileManager.getCachedUser(forId: currentUserID)
     }
+    var currentUserID: String? { Auth.auth().currentUser?.uid }
     
     // MARK: non-FirebaseUI login
     // On success, (1) signs in, (2) FirebaseManager saves the now logged in user locally
@@ -37,13 +38,7 @@ class FirebaseManager: NSObject {
                       completion: @escaping (_ response: AuthDataResultType) -> Void) {
         Auth.auth().signIn(withEmail: email, password: password) {
             let result = self.resultFrom(firebaseResponse: $0, $1)
-            switch result {
-                case .success(let data):
-                    self.setLocalUser(from: data.user)
-                    completion(.success(data))
-                case .failure(let error):
-                    completion(.failure(error))
-            }
+            completion(result)
         }
     }
     
@@ -63,11 +58,6 @@ class FirebaseManager: NSObject {
     
     
     // MARK: Common methods
-    
-    func setLocalUser(from user: FirebaseAuth.User) {
-        currentUser = user.asLocalUserObj
-    }
-    
     /**
      1. Creates a user in FireBase (Dashboard -> Users tab) (email, password, uid).
      2. Creates a `User` *object* from the created user (has a username).
@@ -80,7 +70,6 @@ class FirebaseManager: NSObject {
                 case .failure(let error):
                     print(error.localizedDescription)
                 case .success(_):
-                    // 2. Associate a username with that new user (?)
                     self.addSignedInUserToDB(username: username, email: email)
             }
         }                
@@ -108,39 +97,13 @@ class FirebaseManager: NSObject {
         
         return .failure(error ?? FirebaseError.unknownError("login error"))
     }
-    
-    /// Firebase User is just a uid
-    private func syncLocalUserObjectToRemote(for user: User?) {
-        guard let user = user else { return }
-        
-        //sync with user object
-        dbRef.child(L10n.DbPath.users)
-            .queryOrdered(byChild: L10n.DbPath.uid)
-            .queryEqual(toValue: user.uid)
-            .observeSingleEvent(of: .value) {
-                guard let value = $0.value else { return }
-                do {
-                    let user = try FirebaseDecoder().decode(User.self, from: value)
-                    self.currentUser?.fillNils(from: user)
-                }
-                catch { print(error.localizedDescription) }
-            }
-    }
 }
 
 // MARK: - FUIAuthDelegate
 extension FirebaseManager: FUIAuthDelegate {
     func authUI(_ authUI: FUIAuth, didSignInWith authDataResult: AuthDataResult?, error: Error?) {
-
-        let result = resultFrom(firebaseResponse: authDataResult, error)
-        switch result {
-            case .success(let data):
-                setLocalUser(from: data.user)
-                let user = data.user.asLocalUserObj
-                addSignedInUserToDB(username: user.username, email: user.email)
-                
-            case .failure(let error):
-                print("ERROR in \(#function): ", error.localizedDescription)
+        if let error = error {
+            print("ERROR in \(#function): ", error.localizedDescription)
         }
     }
 }

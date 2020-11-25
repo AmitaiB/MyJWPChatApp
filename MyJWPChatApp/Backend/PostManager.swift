@@ -19,7 +19,8 @@ class PostManager {
     static var posts = [Post]()
     
     // Fills the view controller with the existing conversation/threads
-    static func fetchPosts(ownerUid: String?, toId: String, completion: @escaping(_ result: PostResult) -> Void) {
+    static func fetchPosts(ownerUid: String?, toId: String, completion: @escaping(_ result: PostResult) -> Void)
+    {
         clearCurrentPosts()
         
         dbRef
