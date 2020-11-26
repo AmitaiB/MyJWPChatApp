@@ -71,3 +71,5 @@ fastlane/screenshots/**/*.png
 fastlane/test_output
 
 MyJWPChatApp/ViewControllers/MyJWChatAppKey.p12
+
+MyJWPChatApp/SupportingCode/SecureKeys.swift
