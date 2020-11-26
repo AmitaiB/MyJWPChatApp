@@ -21,10 +21,11 @@ class LoginViewController: UIViewController {
         
         showMainSceneIfLoggedIn()
         
-        // Respond to Social Login
-        authListener = Auth.auth().addStateDidChangeListener { (_, _) in
-            self.dismiss(animated: true, completion: nil)
-            self.showMainSceneIfLoggedIn()
+        // Handles both email and social login workflows
+        authListener = Auth.auth().addStateDidChangeListener { (_,_) in
+            self.dismiss(animated: true) {
+                self.showMainSceneIfLoggedIn()
+            }
         }
     }
     
@@ -48,7 +49,6 @@ class LoginViewController: UIViewController {
             }
         }
     }
-
 
     @IBAction func createAccountButtonTapped(_ sender: UIButton) {
         guard
