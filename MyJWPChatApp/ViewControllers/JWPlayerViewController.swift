@@ -14,7 +14,7 @@ class JWPlayerViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        let config = JWConfig(contentURL: "http://content.bitsontherun.com/videos/3XnJSIm4-injeKYZS.mp4")
+        let config = JWConfig(contentURL: "https://cdn-videos.akamaized.net/btv/desktop/fastly/us/live/primary.m3u8")
         player = JWPlayerController(config: config)
         
         title = "JWP SDK ver: \(JWPlayerController.sdkVersionToMinor())"
