@@ -302,7 +302,7 @@
                                     <constraint firstAttribute="width" secondItem="fWh-zn-BhT" secondAttribute="height" multiplier="16:9" id="79g-vc-7se"/>
                                 </constraints>
                                 <connections>
-                                    <segue destination="HSZ-6K-jLi" kind="embed" id="JTQ-zT-0UL"/>
+                                    <segue destination="2Z9-Nt-Me5" kind="embed" id="JTQ-zT-0UL"/>
                                 </connections>
                             </containerView>
                         </subviews>
@@ -373,13 +373,38 @@
                         <viewLayoutGuide key="safeArea" id="07d-5K-ogt"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                     </view>
+                    <navigationItem key="navigationItem" id="pdv-D4-MeD">
+                        <barButtonItem key="rightBarButtonItem" systemItem="refresh" id="Wnn-I8-hpp">
+                            <connections>
+                                <action selector="refreshButtonTapped:" destination="HSZ-6K-jLi" id="AfI-Af-5GG"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                     <connections>
                         <outlet property="playerContainerView" destination="jl5-am-Roh" id="sU5-e4-fbD"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="uMu-i3-072" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-414" y="-377"/>
+            <point key="canvasLocation" x="492.75362318840581" y="-377.34375"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="KcZ-8E-wKm">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" hidesBarsOnTap="YES" id="2Z9-Nt-Me5" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="74w-lz-uMr">
+                        <rect key="frame" x="0.0" y="44" width="414" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="HSZ-6K-jLi" kind="relationship" relationship="rootViewController" id="OSw-IM-kzE"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="ofs-oT-Nha" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-414.49275362318843" y="-377.34375"/>
         </scene>
     </scenes>
     <resources>
